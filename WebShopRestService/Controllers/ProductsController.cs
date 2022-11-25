@@ -20,9 +20,9 @@ namespace WebShopService.Controllers
         }
         // URL: api/Products
         [HttpGet]
-        public ActionResult<List<CustomerDto>> Get()
+        public ActionResult<List<ProductDto>> Get()
         {
-            ActionResult<List<CustomerDto>> foundReturn;
+            ActionResult<List<ProductDto>> foundReturn;
             // retrieve and convert data 
             List<Product>? foundProducts = _pControl.Get();
             List<ProductDto>? foundDts = null;
@@ -52,10 +52,35 @@ namespace WebShopService.Controllers
         }
         // URL: api/customer/{id} 
         [HttpGet, Route("{id}")]
-        public ActionResult<CustomerDto> Get(int id)
+        public ActionResult<ProductDto> Get(int id)
         {
-            return null;
+            ActionResult <ProductDto>  foundReturn;
+            // retrieve and convert data 
+            Product? foundProducts = _pControl.Get(id);
+          ProductDto? foundDts = null;
+            if (foundProducts != null)
+            {
+                foundDts = ModelConversion.ProductDtoConvert.FromProduct(foundProducts);
+            }
+            // evaluate 
+            if (foundDts != null)
+            {
+                if (foundDts.ID > 0)
+                {
+                    foundReturn = Ok(foundDts); // Statuscode 200 
+                }
+                else
+                {
+                    foundReturn = new StatusCodeResult(204); // Ok, but no content 
 
+                }
+            }
+            else
+            {
+                foundReturn = new StatusCodeResult(500); // Internal server error
+            }
+            // send response back to client 
+            return foundReturn;
         }
 
         // URL: api/customers

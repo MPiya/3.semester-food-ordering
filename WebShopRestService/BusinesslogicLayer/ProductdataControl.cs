@@ -27,5 +27,19 @@ namespace WebShopService.BusinesslogicLayer
             return foundProducts;
         }
 
+        public Product Get(int id)
+        {
+            Product? foundProducts;
+            try
+            {
+                foundProducts = _productAccess.GetProductById(id);
+            }
+            catch
+            {
+                foundProducts = null;
+            }
+            return foundProducts;
+        }
+
     }
 }
