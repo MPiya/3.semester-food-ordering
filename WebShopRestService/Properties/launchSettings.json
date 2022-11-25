@@ -1,0 +1,32 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:4029",
+      "sslPort": 44398
+    }
+  },
+  "profiles": {
+    "WebShopRestService": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "api/orders",
+      "applicationUrl": "https://localhost:7177;http://localhost:5154",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+   
+      "IIS Express": {
+        "commandName": "IISExpress",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "launchBrowser": true,
+        "launchUrl": "weatherforecast"
+      }
+    }
+  }
