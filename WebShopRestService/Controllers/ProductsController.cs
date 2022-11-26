@@ -50,7 +50,7 @@ namespace WebShopService.Controllers
             // send response back to client 
             return foundReturn;
         }
-        // URL: api/customer/{id} 
+        // URL: api/products/{id} 
         [HttpGet, Route("{id}")]
         public ActionResult<ProductDto> Get(int id)
         {

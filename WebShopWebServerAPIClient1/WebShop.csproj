@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BusinessLogicLayer\**" />
     <Compile Remove="Model\**" />
+    <Content Remove="BusinessLogicLayer\**" />
     <Content Remove="Model\**" />
+    <EmbeddedResource Remove="BusinessLogicLayer\**" />
     <EmbeddedResource Remove="Model\**" />
+    <None Remove="BusinessLogicLayer\**" />
     <None Remove="Model\**" />
   </ItemGroup>
 
@@ -22,10 +26,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="BusinessLogicLayer\" />
   </ItemGroup>
 
 </Project>
