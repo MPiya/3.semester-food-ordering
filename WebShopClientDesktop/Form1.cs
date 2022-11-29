@@ -38,5 +38,10 @@ namespace WebShopClientDesktop
 			listBoxOrders.DataSource = fetchedOrders;
 
 		}
-	}
+
+        private void listBoxOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

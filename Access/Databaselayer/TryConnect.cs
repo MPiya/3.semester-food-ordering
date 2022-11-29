@@ -25,6 +25,7 @@ namespace Access.Databaselayer
 				conn.Open();
 				ConnectionState connState1 = conn.State;
 				conn.Close();
+
 				ConnectionState connState2 = conn.State;
 				connStates = new List<ConnectionState>() {
 					connState1, connState2

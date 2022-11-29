@@ -10,6 +10,11 @@ namespace WebShopModel.Model
     public class OrderLine
     {
         public OrderLine() { }
+        public OrderLine(int productID, int saleQuantity)
+        {
+            this.ProductID = productID;
+            this.Quantity = saleQuantity;
+        }
 
         public OrderLine(int productID, int orderID, int saleQuantity, double totalPrice)
         {
@@ -20,6 +25,7 @@ namespace WebShopModel.Model
         }
 
         public int ProductID{ get; set; }
+        public virtual Product ProductProduct { get; set; }
 
         public int OrderID { get; set; }
         public int Quantity { get; set; }

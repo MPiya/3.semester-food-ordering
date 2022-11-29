@@ -5,12 +5,9 @@
 
 <h1 class="align-content-center">Menu</h1>
 
-<hr />
 
 
-<div @*style="margin-top: 140px;"*@>
-
-    <table class="table" ">
+    <table class="table">
         <thead>
             @* Define roll of cells*@
             <tr class="text-center">
@@ -19,7 +16,9 @@
                 <th>Price</th>
             </tr>
         </thead>
-        <tbody>
+        
+       
+         <tbody>
             @foreach (var item in Model)
             {
             <tr>
@@ -33,11 +32,20 @@
                 </td>
 
                 <td class="align-middle">
-                    <a class="btn btn-outline-primary " asp-action="" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i>Order </a>
+                        <a button class="btn btn-outline-success " asp-controller="Orders"  asp-action="Details" asp-route-ID="@item.ID">Order </a>
                 </td>
+
+               
 
             </tr>
             }
         </tbody>
-    </table>
+</table>
+
+
+    
+
+<div class="btn-group">
+    <a class="btn btn-outline-success" asp-controller="Products" asp-action="Index"> Add more items</a>
 </div>
+

@@ -29,25 +29,31 @@ namespace WebShopClientDesktop.ModelLayer
 			fullOrder= fullOrder;
 		}
 
-		public int customerId { get; set; }
+		public int ID { get; set; }
+        public int customerId { get; set; }
 		public string? paymentType { get; set; }
 		public string? notes { get; set; }
 		public DateTime orderDate { get; set; }
 		public string? fullOrder { get; set; }
+		
 
 		public override string ToString()
 		{
 			//string? oText = fullOrder;
 			//int otext1 = customerId.CompareTo(customerId.TryFormat());
-			string? oText2 = notes;
+			
 			DateTime oText3 = orderDate;
-			string? oText4 = paymentType; ;
+            string OrderID = ID.ToString();
+            string date = oText3.ToString();
+			string customerid = customerId.ToString();
+
 
 			//if (paymentType != null)
 			//{
 			//	oText += " - paymentType: " + paymentType;
 			//}
-			return oText2 + oText3 + oText4;
+			//}
+			return OrderID + customerid + date;
 		}
 
     }

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MessagePack;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,33 +10,41 @@ using WebShopWebServerAPIClient1.Data;
 
 namespace WebShopModel.Model
 {
+    [Keyless]
     public class OrderLine
     {
 
-        public AppDbContext _context { get; set; }
+      
+        public int ProductID { get; set; }
+     
+        public int OrderID { get; set; }
+        public int Quantity { get; set; }
+        public double TotalPrice { get; set; }
 
-        public OrderLine(AppDbContext context)
+        List<Product> products1= new List<Product>();
+        public OrderLine(int productID )
         {
-            _context = context;
+            this.ProductID = productID;
+           
+            List<Product>  product = new List<Product>();
         }
 
-        public OrderLine() { }
+        public OrderLine(List <Product> products) 
+        {
+            products1 = products;
+        }
 
         public OrderLine(int productID, int orderID, int saleQuantity, double totalPrice)
         {
-            this.ProductID= productID;
+            this.ProductID = productID;
             this.OrderID = orderID;
             this.Quantity = saleQuantity;
             this.TotalPrice = totalPrice;
         }
 
-        public int ProductID{ get; set; }
 
-        public int OrderID { get; set; }
-        public int Quantity { get; set; }
-        public double TotalPrice{ get; set; }
 
-        public List<Product> Products { get; set; }
+
 
         /*
         public List<Product> getProducts()
