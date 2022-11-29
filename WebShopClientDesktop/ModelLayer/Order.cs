@@ -8,39 +8,47 @@ namespace WebShopClientDesktop.ModelLayer
 {
     public class Order
     {
-        private string custId;
-
-        public Order(string pment, string note) { }
-
-        public Order(int customerId, string paymentType, string notes) {
-            customerId = customerId;
-            paymentType = paymentType;
-            notes = notes;
-        }
-
-        public Order(string pment, string note, string custId) : this(pment, note)
-        {
-            this.custId = custId;
-        }
-
-        public Order(int customerId, string paymentType, string notes, String fullOrder) : this(customerId, paymentType,fullOrder) {
-            notes = notes;
-        }
-        public int customerId { get; set; }
-        public string paymentType { get; set; }
-        public string notes { get; set; }
-        public String fullOrder { get; set; }
+       		public Order() { }
+		public Order(DateTime orderDate, int customerId, string paymentType, string notes)
+		{
+			orderDate = orderDate;
+			customerId = customerId;
+			paymentType = paymentType;
+			notes = notes;
+		}
 
 
-        public override string? ToString()
-        {
-            string? oText = fullOrder;
-            if(notes != null)
-            {
-                oText += " - Pay attention, there is a note:" + notes;
-            }
-            return oText;
-        }
+		public Order(DateTime orderDate, string customerId, string paymentType, string notes, string fullOrder)
+		
+		{
+			
+			customerId = customerId;
+			orderDate = orderDate.ToUniversalTime();
+			paymentType = paymentType;
+			notes = notes;
+			fullOrder= fullOrder;
+		}
+
+		public int customerId { get; set; }
+		public string? paymentType { get; set; }
+		public string? notes { get; set; }
+		public DateTime orderDate { get; set; }
+		public string? fullOrder { get; set; }
+
+		public override string ToString()
+		{
+			//string? oText = fullOrder;
+			//int otext1 = customerId.CompareTo(customerId.TryFormat());
+			string? oText2 = notes;
+			DateTime oText3 = orderDate;
+			string? oText4 = paymentType; ;
+
+			//if (paymentType != null)
+			//{
+			//	oText += " - paymentType: " + paymentType;
+			//}
+			return oText2 + oText3 + oText4;
+		}
 
     }
 }
