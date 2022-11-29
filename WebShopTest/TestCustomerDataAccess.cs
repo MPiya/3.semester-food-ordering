@@ -25,12 +25,17 @@ namespace WebShopTest
         { // Arrange
 
 
-          // Act
+          
+            // Act
 
             List<Customer> readCustomers = _customerAccess.GetCustomerAll();
             bool customersWereRead = (readCustomers.Count > 0);
             // Print additional output
             extraOutput.WriteLine("Number of customers: " + readCustomers.Count);
+
+
+
+
             // Assert
             Assert.True(customersWereRead);
         }
