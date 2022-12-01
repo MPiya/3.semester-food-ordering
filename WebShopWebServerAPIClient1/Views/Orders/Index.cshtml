@@ -1,7 +1,7 @@
 ﻿@using WebShop.Models;
 
 
-@model List<ShoppingCart>
+@model List<ShoppingCart> 
 
 
 @{
@@ -58,14 +58,18 @@
             <tr>
             <td class="align-middle">@item.Count</td>
                     <td class="align-middle"> @item.menu</td>
-                <td class="align-middle"> @item.Price</td>
-               
-              
+                <td class="align-middle"> @item.Price kr.</td>
 
+                        <td> @(item.Price * item.Count) kr. </td>
+      
             </tr>
-         
+           
+              
             }
         </tbody>
+
+         
+        </tr>
     </table>
 
 
@@ -74,9 +78,7 @@
 
  <tfoot>
      <tr>
-         <td colspan="2"> </td>
-         <td> <b>Total</b></td>
-       
+    
        
        @** <td> 
              @Model.orders.ToString("C")

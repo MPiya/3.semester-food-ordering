@@ -36,6 +36,18 @@ namespace WebShop.Controllers
 
         }
 
+        protected string PriceFormat(decimal price)
+        {
+            System.Globalization.CultureInfo danish = new System.Globalization.CultureInfo("da-DK");
+            danish = (System.Globalization.CultureInfo)danish.Clone();
+            // Adjust these to suit
+            danish.NumberFormat.CurrencyPositivePattern = 3;
+            danish.NumberFormat.CurrencyNegativePattern = 3;
+            decimal value = price;
+            string output = value.ToString("C", danish);
+
+            return output;
+        }
         public async Task<IActionResult> Index()
 
         {
