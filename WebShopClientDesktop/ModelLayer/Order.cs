@@ -53,7 +53,7 @@ namespace WebShopClientDesktop.ModelLayer
 			//	oText += " - paymentType: " + paymentType;
 			//}
 			//}
-			return OrderID + customerid + date;
+			return OrderID +  "  "  + customerid +  "  "  + date  + "  " ; 
 		}
 
     }
