@@ -1,8 +1,10 @@
 ﻿    using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace WebShopModel.Model
 {
@@ -22,6 +24,9 @@ namespace WebShopModel.Model
         public int ID { get; set; }
 
         public int customerId { get; set; }
+
+        [Display(Name = "Order Date")]
+        [Required]
         public DateTime orderDate { get; set; }
 
         public List<OrderLine> Lines { get; set; }

@@ -48,8 +48,8 @@ namespace WebShopService.Controllers
 
             }
 
-        
-    
+
+
 
         // URL: api/orders/{id}
         [HttpGet, Route("{id}")]
@@ -57,6 +57,7 @@ namespace WebShopService.Controllers
         {
             return null;
         }
+
         // URL: api/orders
         [HttpPost]
         public ActionResult<int> PostNewOrder(OrderDto inOrder)
@@ -80,6 +81,7 @@ namespace WebShopService.Controllers
             }
             return foundReturn;
         }
+         
 
     }
 }
