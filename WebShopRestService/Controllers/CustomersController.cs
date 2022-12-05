@@ -52,7 +52,7 @@ namespace WebShopService.Controllers
             return foundReturn;
         }
 
-        /*
+        
         // URL: api/customer/{id} 
         [HttpGet, Route("{id}")]
         public ActionResult<CustomerDto> Get(int id)
@@ -60,28 +60,28 @@ namespace WebShopService.Controllers
             return null;
 
         }
-        */
+        
         // URL: api/customers
-        //        [HttpPost]
-        // public ActionResult<int> PostNewCustomer(CustomerDto inCustomer)
-        //{
-        //  ActionResult<int> foundReturn;
-        //int insertedId = -1;
-        //if (inCustomer != null)
-        //{
-        //  Customer? dbCustomer = ModelConversion.CustomerDtoConvert.ToCustomer(inCustomer);
-        //insertedId = _cControl.Add(dbCustomer);
-        //}
-        //if (insertedId > 0)
-        //{
-        //  foundReturn = Ok(insertedId);
-        //}
-        //else
-        //{
-        //  foundReturn = new StatusCodeResult(500); // Internal server error
-        //}
-        //return foundReturn;
+               [HttpPost]
+         public ActionResult<int> PostNewCustomer(CustomerDto inCustomer)
+        {
+          ActionResult<int> foundReturn;
+        int insertedId = -1;
+        if (inCustomer != null)
+        {
+         Customer? dbCustomer = ModelConversion.CustomerDtoConvert.ToCustomer(inCustomer);
+       insertedId = _cControl.Add(dbCustomer);
+        }
+        if (insertedId > 0)
+        {
+          foundReturn = Ok(insertedId);
+        }
+       else
+        {
+          foundReturn = new StatusCodeResult(500); // Internal server error
+        }
+        return foundReturn;
 
-        //}
+        }
     }
 }

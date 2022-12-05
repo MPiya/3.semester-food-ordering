@@ -1,7 +1,6 @@
 ﻿@using WebShop.Models;
 
 
-@model List<ShoppingCart> 
 
 
 @{
@@ -12,10 +11,10 @@
 
 <hr />
 
-
+@*
 
 <div>
-    @*
+    
     
     <div class="col-md-2"> 
     <form asp-action="Index">
@@ -36,67 +35,6 @@
             <span asp-validation-for="orderDate" class="text-danger"></span>
     </div>
     </form>
-
-    </div> *@
-
-    <div class="col-md-8">
-        
-        <table class="table">
-        <thead>
-            <tr>
-                <th>Selected Amount</th>
-                <th>Menu</th>
-                <th>Price</th>
-                <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-
-             @* model.shoppingcart can be model.orderline *@
-               @foreach (var item in Model) 
-            {
-            <tr>
-            <td class="align-middle">@item.Count</td>
-                    <td class="align-middle"> @item.menu</td>
-                <td class="align-middle"> @item.Price kr.</td>
-
-                        <td> @(item.Price * item.Count) kr. </td>
-      
-            </tr>
-           
-              
-            }
-        </tbody>
-
-         
-        </tr>
-    </table>
-
-
-</div>
-</div>
-
- <tfoot>
-     <tr>
     
-       
-       @** <td> 
-             @Model.orders.ToString("C")
-        </td>*@
-        <td></td>
-        <td class="align-middle">
-
-        </td>
-    </tr>
-
-    <div class="text-center">
-        <div class="btn-group">
-            <a class="btn btn-outline-success" asp-controller="Products" asp-action="Index"> Add more items</a>
-        </div>
-    
-    </div>
- </tfoot>
-
- <div></div>
-<i class="bi bi-2-square">ello</i>
-
+    </div> 
+    *@

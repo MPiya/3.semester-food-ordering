@@ -1,8 +1,7 @@
-﻿using WebShopModel.Model;
+﻿
+using WebShopModel.Model;
 
-namespace ShoppingCart.Models
-{
-        public class CartItem
+public class CartItem
         {
                 public long ProductId { get; set; }
                 public string ProductName { get; set; }
@@ -28,4 +27,4 @@ namespace ShoppingCart.Models
                 }
 
         }
-}
+

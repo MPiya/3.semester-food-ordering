@@ -10,11 +10,11 @@ namespace WebShopModel.Model
     {
 
         public Customer() { }
-        public Customer(string? firstName, string? lastName, string? phoneNu, string? email)
+        public Customer(string? firstName, string? lastName, string? phoneNumber, string? email)
         {
             FirstName = firstName;
             LastName = lastName;
-            PhoneNu = phoneNu;
+            PhoneNumber = phoneNumber;
             Email = email;
            
 
@@ -30,7 +30,7 @@ namespace WebShopModel.Model
         public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string? PhoneNu { get; set; }
+        public string? PhoneNumber { get; set; }
         public string? Email { get; set; }
 
         public string? Address { get; set; }

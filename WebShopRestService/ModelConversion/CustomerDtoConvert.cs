@@ -29,7 +29,7 @@ namespace WebShopService.ModelConversion
             if (inCustomer != null)
             {
                 aCustomerReadDto = new CustomerDto(inCustomer.FirstName, inCustomer.LastName,
-                    inCustomer.PhoneNu, inCustomer.Email, inCustomer.Address);
+                    inCustomer.PhoneNumber, inCustomer.Email, inCustomer.Address);
                 aCustomerReadDto.FullName = $"{inCustomer.FirstName}" +
                 $" {inCustomer.LastName}";
             }

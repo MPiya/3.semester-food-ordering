@@ -35,8 +35,8 @@ namespace WebShopData.DatabaseLayer
         public int CreateCustomer(Customer aCustomer)
         {
             int insertedId = -1;
-            string insertString = "insert into [Customer](firstName, lastName, phoneNu, email, address) OUTPUT" +
-                " INSERTED.ID values(@FirstNam, @LastNam, @Phonenu,@Email, @Addres)";
+            string insertString = "insert into [Customer](firstName, lastName, phoneNumber, email) OUTPUT" +
+                " INSERTED.ID values(@FirstNam, @LastNam, @Phonenu,@Email)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
@@ -45,10 +45,9 @@ namespace WebShopData.DatabaseLayer
                 CreateCommand.Parameters.Add(fNameParam);
                 SqlParameter lNameParam = new("@LastNam", aCustomer.LastName);
                 CreateCommand.Parameters.Add(lNameParam);
-                SqlParameter phoneNuParam = new("@Phonenu", aCustomer.PhoneNu);
+                SqlParameter phoneNuParam = new("@Phonenu", aCustomer.PhoneNumber);
                 CreateCommand.Parameters.Add(phoneNuParam);
-                SqlParameter eAddressParam = new("@Email", aCustomer.Email);
-                CreateCommand.Parameters.Add(eAddressParam);
+          
                 SqlParameter addressParam = new("@Addres", aCustomer.Address);
                 CreateCommand.Parameters.Add(addressParam);
 
@@ -104,7 +103,7 @@ namespace WebShopData.DatabaseLayer
         public Customer GetCustomerById(int findId)
         {
             Customer foundCustomer;
-            string queryString = "select id, firstName, lastName, phoneNu, email, address from [Customer] where id = @Id";
+            string queryString = "select id, firstName, lastName, phoneNu, email from [Customer] where id = @Id";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand readCommand = new SqlCommand(queryString, con))
             {
