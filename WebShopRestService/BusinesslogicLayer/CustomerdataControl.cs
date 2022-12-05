@@ -10,7 +10,6 @@ namespace WebShopService.BusinesslogicLayer
         {
             _customerAccess = new CustomerDatabaseAccess(inConfiguration);
         }
-        /*
         public int Add(Customer newCustomer)
         {
             int insertedId;
@@ -24,23 +23,8 @@ namespace WebShopService.BusinesslogicLayer
             }
 
             return insertedId;
-        }*/
-
-        public bool Add(Customer customer)
-        {
-            bool insertedId;
-            try
-            {
-                insertedId = _customerAccess.CreateCustomer(customer);
-            }
-            catch
-            {
-              insertedId = false;
-            }
-
-            return insertedId;
         }
-     
+
         public bool Delete(int id)
         {
             throw new NotImplementedException();

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace WebShopModel.Model
 {
@@ -28,27 +26,10 @@ namespace WebShopModel.Model
         }
 
 
-        public Customer(string? firstName, string? lastName, string? phoneNu)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            PhoneNu = phoneNu;
-        }
-
 
         public int Id { get; set; }
-
-        [Display(Name = "First Name")]
-        [Required]
         public string? FirstName { get; set; }
-
-        [Display(Name = "Last Name")]
-        [Required]
-
         public string? LastName { get; set; }
-
-        [Display(Name = "Phone")]
-        [Required]
         public string? PhoneNu { get; set; }
         public string? Email { get; set; }
 

@@ -20,7 +20,7 @@ namespace WebShopService.Controllers
 
 
         // URL: api/Customers
-        [HttpGet,Route("HAHA")]
+        [HttpGet]
         public ActionResult<List<CustomerDto>> Get()
         {
             ActionResult<List<CustomerDto>> foundReturn;
@@ -50,32 +50,6 @@ namespace WebShopService.Controllers
             }
             // send response back to client 
             return foundReturn;
-        }
-
-        [HttpPost,Route("CreateCustomer")]
-        public ActionResult Create(CustomerDto customer)
-        {
-            ActionResult foundReturn;
-           
-            if (customer != null)
-            {
-               Customer realCustomer = ModelConversion.CustomerDtoConvert.ToCustomer(customer);
-                bool wasOk = _cControl.Add(realCustomer);
-                if (wasOk)
-                {
-                    foundReturn = Ok();
-                }
-                else
-                {
-                    foundReturn = new StatusCodeResult(500);    // Internal server error
-                }
-            }
-            else
-            {
-                foundReturn = new StatusCodeResult(400); ;      // Bad Request
-            }
-            return foundReturn;
-
         }
 
         /*

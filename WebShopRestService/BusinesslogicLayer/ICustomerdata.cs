@@ -6,8 +6,7 @@ namespace WebShopService.BusinesslogicLayer
     {
         Customer? Get(int id);
         List<Customer>? Get();
-        bool Add(Customer customerToAdd);
-        
+        int Add(Customer customerToAdd);
         bool Put(Customer customerToUpdate);
         bool Delete(int id);
     }

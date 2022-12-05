@@ -29,8 +29,9 @@ namespace WebShopService.ModelConversion
             if (inCustomer != null)
             {
                 aCustomerReadDto = new CustomerDto(inCustomer.FirstName, inCustomer.LastName,
-                    inCustomer.PhoneNu);
-              
+                    inCustomer.PhoneNu, inCustomer.Email, inCustomer.Address);
+                aCustomerReadDto.FullName = $"{inCustomer.FirstName}" +
+                $" {inCustomer.LastName}";
             }
             return aCustomerReadDto;
         }
@@ -39,7 +40,7 @@ namespace WebShopService.ModelConversion
             Customer? aCustomer = null;
             if (inDto != null)
             {
-                aCustomer = new Customer(inDto.FirstName, inDto.LastName, inDto.PhoneNu);
+                aCustomer = new Customer(inDto.FirstName, inDto.LastName, inDto.PhoneNu, inDto.Email);
             }
             return aCustomer;
         }

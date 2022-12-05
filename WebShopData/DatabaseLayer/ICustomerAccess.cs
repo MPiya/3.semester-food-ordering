@@ -6,8 +6,7 @@ namespace WebShopData.DatabaseLayer
     {
         Customer? GetCustomerById(int id);
         List<Customer>? GetCustomerAll();
-         bool CreateCustomer(Customer CustomerToAdd);
-      
+        int CreateCustomer(Customer CustomerToAdd);
         bool UpdateCustomer(Customer CustmerToUpdate);
         bool DeleteCustomerById(int id);
     }

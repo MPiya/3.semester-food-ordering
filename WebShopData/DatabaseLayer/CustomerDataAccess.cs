@@ -32,36 +32,36 @@ namespace WebShopData.DatabaseLayer
         {
             throw new NotImplementedException();
         }
-        public bool CreateCustomer(Customer aCustomer)
+        public int CreateCustomer(Customer aCustomer)
         {
-            bool insertedId = false;
-            string insertString = "insert into [Customer](firstName, lastName, phoneNumber) OUTPUT" +
-                " INSERTED.ID values(@FirstName, @LastName, @Phone";
+            int insertedId = -1;
+            string insertString = "insert into [Customer](firstName, lastName, phoneNu, email, address) OUTPUT" +
+                " INSERTED.ID values(@FirstNam, @LastNam, @Phonenu,@Email, @Addres)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
                 // Prepace SQL
                 SqlParameter fNameParam = new("@FirstNam", aCustomer.FirstName);
                 CreateCommand.Parameters.Add(fNameParam);
-                SqlParameter lNameParam = new("@LastName", aCustomer.LastName);
+                SqlParameter lNameParam = new("@LastNam", aCustomer.LastName);
                 CreateCommand.Parameters.Add(lNameParam);
-                SqlParameter phoneNuParam = new("@Phone", aCustomer.PhoneNu);
+                SqlParameter phoneNuParam = new("@Phonenu", aCustomer.PhoneNu);
                 CreateCommand.Parameters.Add(phoneNuParam);
-              
+                SqlParameter eAddressParam = new("@Email", aCustomer.Email);
+                CreateCommand.Parameters.Add(eAddressParam);
+                SqlParameter addressParam = new("@Addres", aCustomer.Address);
+                CreateCommand.Parameters.Add(addressParam);
 
                 //
                 con.Open();
                 // Execute save and read generated key (ID)
-                insertedId = (bool)CreateCommand.ExecuteScalar();
-
-                con.Close();
+                insertedId = (int)CreateCommand.ExecuteScalar();
             }
             return insertedId;
         }
 
 
-
-
+      
 
         public List<Customer> GetCustomerAll()
         {
