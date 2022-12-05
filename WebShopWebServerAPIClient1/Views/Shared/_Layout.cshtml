@@ -28,14 +28,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">Order</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Order</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="addProductById"> Order Demo</a>
                         </li>
 
-                   
+                        <partial name="_NotificationPartial" />
 
                     </ul>
 
@@ -44,9 +44,13 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+
+
+
+        <div class="col">
+   
             @RenderBody()
-        </main>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">

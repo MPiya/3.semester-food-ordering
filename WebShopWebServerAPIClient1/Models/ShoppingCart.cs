@@ -45,7 +45,9 @@ namespace WebShop.Models
 
         [NotMapped]
         public double Price { get; set; }
-        
+        public double Total {
+            get { return Price * Count; } }
+
 
 
     }

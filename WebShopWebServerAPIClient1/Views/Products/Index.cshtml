@@ -28,11 +28,11 @@
                     @item.Name
                 </td>
                 <td class="align-middle">
-                    @item.Price DKK
+                    @item.Price kr.
                 </td>
 
                 <td class="align-middle">
-                        <a button class="btn btn-outline-success " asp-controller="Orders"  asp-action="Details" asp-route-ID="@item.ID">Order </a>
+                        <a button class="btn btn-outline-success " asp-controller="Cart"  asp-action="Add" asp-route-ID="@item.ID">Order </a>
                 </td>
 
                

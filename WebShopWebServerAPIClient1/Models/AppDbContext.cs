@@ -21,6 +21,6 @@ namespace WebShopWebServerAPIClient1.Data
 
 		public DbSet<Product> Product { get; set; }
 
-		public DbSet<ShoppingCart> shoppingCarts { get;set; }
+	
 	}
 }

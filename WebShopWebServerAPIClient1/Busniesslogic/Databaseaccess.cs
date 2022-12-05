@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using WebShop.Models;
 
 namespace WebShop.Busniesslogic
-{
+{/*
     public class Databaseaccess
     {
 
@@ -121,7 +121,6 @@ namespace WebShop.Busniesslogic
             return foundCart;
         }
 
-
+    */
 
     }
-}
