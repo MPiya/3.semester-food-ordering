@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace WebShopModel.Model
 {
@@ -28,12 +30,19 @@ namespace WebShopModel.Model
 
 
         public int Id { get; set; }
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "Profile pic is required")]
         public string? FirstName { get; set; }
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Profile pic is required")]
         public string? LastName { get; set; }
+
+        [Display(Name = "Phone")]
         public string? PhoneNu { get; set; }
+
+        [Display(Name = "Email")]
         public string? Email { get; set; }
 
-        public string? Address { get; set; }
 
 
         public bool IsCustomerEmpty

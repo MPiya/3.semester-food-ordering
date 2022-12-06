@@ -80,7 +80,9 @@ namespace WebShopService.Controllers
         {
           foundReturn = new StatusCodeResult(500); // Internal server error
         }
-        return foundReturn;
+              return foundReturn;
+
+           
 
         }
     }

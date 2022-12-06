@@ -1,13 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text;
+using WebShop.BusniessLogic;
 using WebShop.ServiceLayer;
+using WebShopData.DatabaseLayer;
 using WebShopModel.Model;
+using WebShopWebServerAPIClient.ServiceLayer;
 
 namespace WebShop.Controllers
 {
+
     public class OrdersController : Controller
     {
 
         CustomerServiceConnection cusService = new CustomerServiceConnection();
+
+
+        CustomerDatabaseAccessa _customerAccess;
+
+        public OrdersController(IConfiguration inConfiguration)
+        {
+            _customerAccess = new CustomerDatabaseAccessa(inConfiguration);
+        }
         public IActionResult Index()
         {
             return View();
@@ -27,24 +41,19 @@ namespace WebShop.Controllers
 
         public async Task<ActionResult> Create(Customer customer)
         {
+            DateTime insertedDateTime = DateTime.Now;
+            await cusService.SaveCustomer(customer);
+            Customer cus = new(customer.Id, customer.FirstName, customer.LastName, customer.PhoneNu, customer.Email);
 
-            try
-            {
-                Customer cus = new(customer.FirstName, customer.LastName, customer.PhoneNu, customer.Email);
-
-
-                bool wasOk = await cusService.SaveCustomer(cus);
-                
-            }
+            /*
+            Order ad = new(cus.Id, insertedDateTime);
+            _customerAccess.CreateOrder(ad);
 
 
-            catch {
-
-                System.Console.WriteLine("Hello World!");
-                // TempData["ProcessText"] = "Technical error!";
-            }
+            //  Order orderOBJ = new(cus.Id, order.orderDate); */
 
             return RedirectToAction(nameof(Index));
+
         }
     }
 }

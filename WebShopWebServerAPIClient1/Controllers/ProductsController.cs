@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using WebShop.ServiceLayer;
 using WebShopModel.Model;
 using WebShopWebServerAPIClient.ServiceLayer;
 
@@ -10,41 +11,22 @@ namespace WebShop.Controllers
         // use to sending request to API
         string baseURL = "https://localhost:7177/";
 
-        ServiceConnection connection;
+        // readonly ServiceConnection connectToAPAA;
+
+        ProductServiceConnection _pService;
 
         public ProductsController()
         {
-            ServiceConnection connection = new ServiceConnection();
+            _pService = new ProductServiceConnection();
         }
         //async way to get  list 
 
         public async Task<IActionResult> Index()
 
         {
-
-            //Consume API
-            IList<Product> user = new List<Product>();
-            ServiceConnection connectToAPI = new ServiceConnection();
-            connectToAPI.UseUrl += "api/products";
-            //Check response
-            HttpResponseMessage getData = await connectToAPI.CallServiceGet();
-
-            if (getData.IsSuccessStatusCode)
-            {
-
-                string results = getData.Content.ReadAsStringAsync().Result;
-                user = JsonConvert.DeserializeObject<List<Product>>(results);
-            }
-
-            else
-            {
-                Console.WriteLine("Error");
-            }
-
-            ViewData.Model = user;
+            List<Product> product= await _pService.getProducts();
+            ViewData.Model = product;
             return View();
-
-
         }
 
 

@@ -36,6 +36,8 @@
             HttpResponseMessage? hrm = null;
             if (UseUrl != null)
             {
+
+                HttpEnabler.BaseAddress = new Uri(baseURL);
                 hrm = await HttpEnabler.PostAsync(UseUrl, postJson);
             }
             return hrm;

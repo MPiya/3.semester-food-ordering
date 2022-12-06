@@ -9,11 +9,10 @@ namespace WebShop.ServiceLayer
     public class CustomerServiceConnection 
     {
 
-        readonly IServiceConnection _lineServiceConnection;
 
         public CustomerServiceConnection()
         {
-            _lineServiceConnection = new ServiceConnection();
+          
         }
 
         public string UseServiceUrl { get; set; }
@@ -22,17 +21,17 @@ namespace WebShop.ServiceLayer
         {
             bool savedOk = false;
 
-            _lineServiceConnection.UseUrl = _lineServiceConnection.UseUrl;
-            _lineServiceConnection.UseUrl += "customers";
+            ServiceConnection connectToAPI = new ServiceConnection();
+           connectToAPI.UseUrl += "api/customers";
 
-            if (_lineServiceConnection != null)
+            if (connectToAPI != null)
             {
                 try
                 {
                     var json = JsonConvert.SerializeObject(item);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    var serviceResponse = await _lineServiceConnection.CallServicePost(content);
+                    var serviceResponse = await connectToAPI.CallServicePost(content);
                     bool wasResponse = (serviceResponse != null);
                     if (wasResponse && serviceResponse.IsSuccessStatusCode)
                     {

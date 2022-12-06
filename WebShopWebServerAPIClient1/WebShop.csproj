@@ -43,4 +43,8 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\WebShopData\DatabaseAccess.csproj" />
+	</ItemGroup>
+
 </Project>

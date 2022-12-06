@@ -9,5 +9,6 @@ namespace WebShopData.DatabaseLayer
         int CreateCustomer(Customer CustomerToAdd);
         bool UpdateCustomer(Customer CustmerToUpdate);
         bool DeleteCustomerById(int id);
+      
     }
 }

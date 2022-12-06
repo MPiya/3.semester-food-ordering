@@ -63,8 +63,6 @@ public class CartController : Controller
         }
 
         // Product product = await _context.Product.FindAsync(id);
-
-
         //WANT THIS LIST CARTiTEM iN   IN ORDERLINE
         List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
 
