@@ -1,40 +1,9 @@
-﻿@using WebShop.Models;
-
-
-
-
+﻿  
+@model WebShopModel.Model.Customer
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Order information</h1>
+ 
 
-<hr />
-
-@*
-
-<div>
-    
-    
-    <div class="col-md-2"> 
-    <form asp-action="Index">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Customer.FirstName" class="control-label"></label>
-            <input asp-for="Customer.FirstName" class="form-control" />
-            <span asp-validation-for="ID" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Customer.LastName" class="control-label"></label>
-            <input asp-for="Customer.LastName" class="form-control" />
-            <span asp-validation-for="customerId" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="orderDate" class="control-label"></label>
-            <input asp-for="orderDate" class="form-control" />
-            <span asp-validation-for="orderDate" class="text-danger"></span>
-    </div>
-    </form>
-    
-    </div> 
-    *@
+<h1>Enjoy your Pizza!</h1>

@@ -10,12 +10,15 @@ using WebShopWebServerAPIClient1.Models.ViewModels;
 public class CartController : Controller
 {
     private readonly AppDbContext _context;
-    ServiceConnection connection;
+
     string baseURL = "https://localhost:7177/";
+
+    private ServiceConnection connectToAPI;
     public CartController(AppDbContext context)
     {
         _context = context;
-        ServiceConnection connection = new ServiceConnection();
+        connectToAPI = new ServiceConnection();
+        
     }
 
 
@@ -24,6 +27,8 @@ public class CartController : Controller
 
     public IActionResult Index()
     {
+
+        // if.getJson is null then create new List CartItem object
         List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
 
         CartViewModel cartVM = new()
@@ -40,7 +45,7 @@ public class CartController : Controller
 
         //Consume API
         Product product = new Product();
-        ServiceConnection connectToAPI = new ServiceConnection();
+       
         connectToAPI.UseUrl += "api/products/" + id;
         //Check response
         HttpResponseMessage getData = await connectToAPI.CallServiceGet();
@@ -59,6 +64,8 @@ public class CartController : Controller
 
         // Product product = await _context.Product.FindAsync(id);
 
+
+        //WANT THIS LIST CARTiTEM iN   IN ORDERLINE
         List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
 
         CartItem cartItem = cart.Where(c => c.ProductId == id).FirstOrDefault();
@@ -93,6 +100,8 @@ public class CartController : Controller
         {
             cart.RemoveAll(p => p.ProductId == id);
         }
+
+
 
         if (cart.Count == 0)
         {

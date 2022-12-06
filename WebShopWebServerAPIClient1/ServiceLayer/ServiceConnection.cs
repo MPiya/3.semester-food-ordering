@@ -1,14 +1,17 @@
 ﻿namespace WebShopWebServerAPIClient.ServiceLayer
 {
-    public class ServiceConnection
+    public class ServiceConnection : IServiceConnection
     {
         readonly string baseURL = "https://localhost:7177/";
-        public string UseUrl;
+        public string UseUrl  { get; set; }
         public ServiceConnection()
         {
             HttpEnabler = new HttpClient();
             string UseUrl = "https://localhost:7177/";
         }
+
+
+
 
         public HttpClient HttpEnabler { private get; init; }
 
@@ -26,6 +29,16 @@
             }
             return hrm;
 
+        }
+
+        public async Task<HttpResponseMessage?> CallServicePost(StringContent postJson)
+        {
+            HttpResponseMessage? hrm = null;
+            if (UseUrl != null)
+            {
+                hrm = await HttpEnabler.PostAsync(UseUrl, postJson);
+            }
+            return hrm;
         }
     }
 }

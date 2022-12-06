@@ -1,3 +1,5 @@
+using WebShopModel.Model;
+
 namespace WebShopClientDesktop
 {
     internal static class Program
@@ -15,3 +17,7 @@ namespace WebShopClientDesktop
         }
     }
 }
+
+
+
+

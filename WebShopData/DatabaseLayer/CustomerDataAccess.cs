@@ -35,7 +35,7 @@ namespace WebShopData.DatabaseLayer
         public int CreateCustomer(Customer aCustomer)
         {
             int insertedId = -1;
-            string insertString = "insert into [Customer](firstName, lastName, phoneNumber, email) OUTPUT" +
+            string insertString = "insert into [Customer](firstName, lastName, phoneNumber, Email) OUTPUT" +
                 " INSERTED.ID values(@FirstNam, @LastNam, @Phonenu,@Email)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
@@ -48,8 +48,8 @@ namespace WebShopData.DatabaseLayer
                 SqlParameter phoneNuParam = new("@Phonenu", aCustomer.PhoneNumber);
                 CreateCommand.Parameters.Add(phoneNuParam);
           
-                SqlParameter addressParam = new("@Addres", aCustomer.Address);
-                CreateCommand.Parameters.Add(addressParam);
+                SqlParameter emailParam = new("@Email", aCustomer.Email);
+                CreateCommand.Parameters.Add(emailParam);
 
                 //
                 con.Open();

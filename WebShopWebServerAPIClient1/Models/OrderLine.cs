@@ -22,17 +22,7 @@ namespace WebShopModel.Model
         public double TotalPrice { get; set; }
 
         List<Product> products1= new List<Product>();
-        public OrderLine(int productID )
-        {
-            this.ProductID = productID;
-           
-            List<Product>  product = new List<Product>();
-        }
 
-        public OrderLine(List <Product> products) 
-        {
-            products1 = products;
-        }
 
         public OrderLine(int productID, int orderID, int saleQuantity, double totalPrice)
         {
@@ -40,6 +30,20 @@ namespace WebShopModel.Model
             this.OrderID = orderID;
             this.Quantity = saleQuantity;
             this.TotalPrice = totalPrice;
+
+        }
+
+
+        public OrderLine(int productID)
+        {
+            this.ProductID = productID;
+
+            List<Product> product = new List<Product>();
+        }
+
+        public OrderLine(List<Product> products)
+        {
+            products1 = products;
         }
 
 

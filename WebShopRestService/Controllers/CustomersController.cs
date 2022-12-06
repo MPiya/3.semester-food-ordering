@@ -62,7 +62,7 @@ namespace WebShopService.Controllers
         }
         
         // URL: api/customers
-               [HttpPost]
+         [HttpPost]
          public ActionResult<int> PostNewCustomer(CustomerDto inCustomer)
         {
           ActionResult<int> foundReturn;
