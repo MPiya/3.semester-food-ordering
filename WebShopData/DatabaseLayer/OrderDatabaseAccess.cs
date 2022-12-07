@@ -30,7 +30,7 @@ namespace WebShopData.DatabaseLayer
 
         public int CreateOrder(Order aOrder)
 
-        {
+        {   
             int insertedId = -1;
             DateTime insertedDateTime = DateTime.Now;
             //

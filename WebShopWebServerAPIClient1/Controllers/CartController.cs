@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+using WebShop.Controllers;
 using WebShop.Models.Session;
 using WebShopModel.Model;
 using WebShopWebServerAPIClient.ServiceLayer;
@@ -34,6 +34,7 @@ public class CartController : Controller
         CartViewModel cartVM = new()
         {
             CartItems = cart,
+            //LINQ iterate and sum all the items in cart
             GrandTotal = cart.Sum(x => x.Quantity * x.Price)
         };
 
@@ -46,7 +47,7 @@ public class CartController : Controller
         //Consume API
         Product product = new Product();
        
-        connectToAPI.UseUrl += "api/products/" + id;
+         connectToAPI.UseUrl += "api/products/" + id;
         //Check response
         HttpResponseMessage getData = await connectToAPI.CallServiceGet();
 
@@ -54,6 +55,8 @@ public class CartController : Controller
         {
 
             string results = getData.Content.ReadAsStringAsync().Result;
+
+            // convert data from SQL to Product object and will be used 
             product = JsonConvert.DeserializeObject<Product>(results);
         }
 
@@ -69,7 +72,7 @@ public class CartController : Controller
         CartItem cartItem = cart.Where(c => c.ProductId == id).FirstOrDefault();
 
         if (cartItem == null)
-        {
+        {  
             cart.Add(new CartItem(product));
         }
         else
@@ -81,15 +84,17 @@ public class CartController : Controller
 
         TempData["Success"] = "The product has been added!";
 
-        return Redirect(Request.Headers["Referer"].ToString());
+        //same as return RedirectToAction("index","Products");
+         return Redirect(Request.Headers["Referer"].ToString());
     }
 
     public async Task<IActionResult> Decrease(long id)
     {
-        List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
-
+        List<CartItem> cart =  HttpContext.Session.GetJson<List<CartItem>>("Cart");
+        //getProduct using productId 
         CartItem cartItem = cart.Where(c => c.ProductId == id).FirstOrDefault();
 
+       
         if (cartItem.Quantity > 1)
         {
             --cartItem.Quantity;
@@ -100,10 +105,10 @@ public class CartController : Controller
         }
 
 
-
+        
         if (cart.Count == 0)
         {
-            HttpContext.Session.Remove("Cart");
+           HttpContext.Session.Remove("Cart");
         }
         else
         {

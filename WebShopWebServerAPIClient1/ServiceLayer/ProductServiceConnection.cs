@@ -22,11 +22,8 @@ namespace WebShop.ServiceLayer
                 string results = getData.Content.ReadAsStringAsync().Result;
         user = JsonConvert.DeserializeObject<List<Product>>(results);
             }
-
-            else
-            {
-                Console.WriteLine("Error");
-            }
+            
+        
 
             return user;
         }

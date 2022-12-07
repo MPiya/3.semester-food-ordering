@@ -45,8 +45,9 @@ namespace WebShop.Controllers
             await cusService.SaveCustomer(customer);
             Customer cus = new(customer.Id, customer.FirstName, customer.LastName, customer.PhoneNu, customer.Email);
 
-            /*
-            Order ad = new(cus.Id, insertedDateTime);
+            Customer da = new(26, "aa", "gg", "ff", "ew");
+            
+            Order ad = new(da.Id, insertedDateTime);
             _customerAccess.CreateOrder(ad);
 
 
