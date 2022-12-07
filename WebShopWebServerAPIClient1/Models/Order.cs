@@ -10,17 +10,27 @@ namespace WebShopModel.Model
     public class Order
     {
         public Order() { }
-
+        /*
         public Order(int id, int customerId, DateTime date) { 
             this.ID= id;
             this.customerId = customerId;
             this.orderDate= date;
         
-        }
+        }*/
+
+
         public Order( int customerId, DateTime date)
         {
           
             this.customerId = customerId;
+            this.orderDate = date;
+
+        }
+
+        public Order(Customer customer, DateTime date)
+        {
+
+            this.customerId = customer.Id;
             this.orderDate = date;
 
         }
@@ -31,8 +41,6 @@ namespace WebShopModel.Model
         public int customerId { get; set; }
         public DateTime orderDate { get; set; }
 
-
-        public virtual Customer Customer { get; set; } = null!;
 
         /*
         public Order(DateTime orderDate, int customerId, string? paymentType, string? notes)

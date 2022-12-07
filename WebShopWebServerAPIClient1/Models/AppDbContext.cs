@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebShop.Models;
+
 using WebShopModel.Model;
 
 namespace WebShopWebServerAPIClient1.Data

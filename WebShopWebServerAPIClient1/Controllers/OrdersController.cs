@@ -42,13 +42,16 @@ namespace WebShop.Controllers
         public async Task<ActionResult> Create(Customer customer)
         {
             DateTime insertedDateTime = DateTime.Now;
-            await cusService.SaveCustomer(customer);
-            Customer cus = new(customer.Id, customer.FirstName, customer.LastName, customer.PhoneNu, customer.Email);
-
-            Customer da = new(26, "aa", "gg", "ff", "ew");
+                int returnCustomerId = await cusService.SaveCustomer(customer);
+         
+            Customer da = new("Adam", "Star", "4564566", "123@gmaill.com");
             
-            Order ad = new(da.Id, insertedDateTime);
-            _customerAccess.CreateOrder(ad);
+           
+         //  int cusId = _customerAccess.CreateCustomera(da);
+            Order ad = new(returnCustomerId, insertedDateTime);
+            int orderId = _customerAccess.CreateOrder(ad);
+           // int OrderLine = _customerAccess.CreateOrderLine(orderId, cusId, etc);
+            
 
 
             //  Order orderOBJ = new(cus.Id, order.orderDate); */

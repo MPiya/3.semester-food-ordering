@@ -31,16 +31,22 @@
 
         }
 
-        public async Task<HttpResponseMessage?> CallServicePost(StringContent postJson)
+        public async Task<int> CallServicePost(StringContent postJson)
         {
             HttpResponseMessage? hrm = null;
+            var content = "get";
+            int returnId = -1;
+            
             if (UseUrl != null)
             {
 
                 HttpEnabler.BaseAddress = new Uri(baseURL);
                 hrm = await HttpEnabler.PostAsync(UseUrl, postJson);
+               content = await hrm.Content.ReadAsStringAsync();
+                returnId = int.Parse(content);
+
             }
-            return hrm;
+            return returnId;
         }
     }
 }

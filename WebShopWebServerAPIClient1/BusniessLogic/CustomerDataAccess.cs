@@ -28,6 +28,34 @@ namespace WebShop.BusniessLogic
         // For test public PersonDatabaseAccess(string inConnectionString) {
         // _connectionString = inConnectionString;
         // }
+
+        public int CreateCustomera(Customer aCustomer)
+        {
+            int insertedId = -1;
+            string insertString = "insert into [Customer](firstName, lastName, phoneNumber, Email) OUTPUT" +
+                " INSERTED.ID values(@FirstNam, @LastNam, @Phonenu,@Email)";
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
+            {
+                // Prepace SQL
+                SqlParameter fNameParam = new("@FirstNam", aCustomer.FirstName);
+                CreateCommand.Parameters.Add(fNameParam);
+                SqlParameter lNameParam = new("@LastNam", aCustomer.LastName);
+                CreateCommand.Parameters.Add(lNameParam);
+                SqlParameter phoneNuParam = new("@Phonenu", aCustomer.PhoneNu);
+                CreateCommand.Parameters.Add(phoneNuParam);
+
+                SqlParameter emailParam = new("@Email", aCustomer.Email);
+                CreateCommand.Parameters.Add(emailParam);
+
+                //
+                con.Open();
+                // Execute save and read generated key (ID)
+                insertedId = (int)CreateCommand.ExecuteScalar();
+                insertedId -= 1;
+            }
+            return insertedId;
+        }
         public bool DeletePersonById(int id)
         {
             throw new NotImplementedException();
@@ -55,8 +83,10 @@ namespace WebShop.BusniessLogic
                 con.Open();
                 // Execute save and read generated key (ID)
                 insertedId = (int)CreateCommand.ExecuteScalar();
+                Console.WriteLine(insertedId.ToString());
             }
             return insertedId;
+
         }
 
 
@@ -133,21 +163,22 @@ namespace WebShop.BusniessLogic
         }
 
 
-        public int CreateOrder(Order aOrder)
+        public int CreateOrder( Order aOrder)
 
         {
             int insertedId = -1;
             DateTime insertedDateTime = DateTime.Now;
             //
-            string insertString = "insert into [order](customerID) OUTPUT INSERTED.ID  values" +
-                "(@customerID)";
+            string insertString = "insert into [order] (customerID,orderDate)  values" +
+                "(@wdwd,@OrderDate)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
                 // Prepace SQL
-
-                SqlParameter customerIdParam = new("@cusotmerID", aOrder.customerId);
+                SqlParameter customerIdParam = new("@wdwd", aOrder.customerId);
                 CreateCommand.Parameters.Add(customerIdParam);
+                SqlParameter orderDateParam = new("@OrderDate", aOrder.orderDate);
+                CreateCommand.Parameters.Add(orderDateParam);
                 //  SqlParameter paymentTypeParam = new("@paymentType", aOrder.paymentType);
                 //   CreateCommand.Parameters.Add(paymentTypeParam);
 
@@ -156,8 +187,8 @@ namespace WebShop.BusniessLogic
                 con.Open();
                 //
                 // Execute save and read generated key (ID)
-                insertedId = (int)CreateCommand.ExecuteScalar();
-                insertedDateTime = (DateTime)CreateCommand.ExecuteScalar();
+               CreateCommand.ExecuteScalar();
+               
 
             }
             return insertedId;

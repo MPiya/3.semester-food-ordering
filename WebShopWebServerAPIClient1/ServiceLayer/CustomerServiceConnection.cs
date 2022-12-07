@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using NuGet.Protocol.Plugins;
 using System.Text;
 using WebShopModel.Model;
 using WebShopWebServerAPIClient.ServiceLayer;
@@ -17,9 +18,11 @@ namespace WebShop.ServiceLayer
 
         public string UseServiceUrl { get; set; }
 
-        public async Task<bool> SaveCustomer(Customer item)
+        public async Task<int> SaveCustomer(Customer item)
         {
             bool savedOk = false;
+            int returnId = -1;
+            
 
             ServiceConnection connectToAPI = new ServiceConnection();
            connectToAPI.UseUrl += "api/customers";
@@ -31,9 +34,9 @@ namespace WebShop.ServiceLayer
                     var json = JsonConvert.SerializeObject(item);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    var serviceResponse = await connectToAPI.CallServicePost(content);
-                    bool wasResponse = (serviceResponse != null);
-                    if (wasResponse && serviceResponse.IsSuccessStatusCode)
+                    returnId = await connectToAPI.CallServicePost(content);
+                    bool wasResponse = (returnId != null);
+                    if (wasResponse !=null)
                     {
                         savedOk = true;
                     }
@@ -44,7 +47,8 @@ namespace WebShop.ServiceLayer
                 }
             }
 
-            return savedOk;
+            
+            return returnId;
         }
 
     }
