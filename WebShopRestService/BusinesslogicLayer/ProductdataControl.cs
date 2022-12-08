@@ -2,7 +2,7 @@
 using WebShopData.DatabaseLayer;
 using WebShopModel.Model;
 
-namespace WebShopService.BusinesslogicLayer
+namespace RESTAPI.BusinesslogicLayer
 {
     public class ProductdataControl : IProductdata
     {

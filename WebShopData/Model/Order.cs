@@ -17,7 +17,7 @@ namespace WebShopModel.Model
             this.orderDate= date;
         
         }
-        public Order( int customerId, DateTime date)
+        public Order(int customerId, DateTime date)
         {
         
             this.customerId = customerId;
@@ -25,48 +25,12 @@ namespace WebShopModel.Model
 
         }
 
-
-
         public int ID { get; set; }
 
         public int customerId { get; set; }
         public DateTime orderDate { get; set; }
 
-        public List<OrderLine> Lines { get; set; }
 
-        public virtual Customer Customer { get; set; } = null!;
-
-        /*
-        public Order(DateTime orderDate, int customerId, string? paymentType, string? notes)
-        {
-            this.orderDate = orderDate;
-            this.customerId = customerId;
-            this.paymentType = paymentType;
-            this.notes = notes;
-        }
-
-        public Order(int id, DateTime orderDate, int customerId, string? paymentType, string? notes)
-            : this(customerId, paymentType, notes)
-        {
-            this.id = id;
-            this.orderDate = orderDate;
-        }
-        */
-
-        /*
-        public bool IsOrderEmpty
-        {
-            get
-            {
-                if (String.IsNullOrWhiteSpace(paymentType))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }*/
     }
 
 }

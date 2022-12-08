@@ -1,4 +1,4 @@
-﻿namespace WebShopService.Dtos
+﻿namespace RestAPI.Dtos
 {
     public class ProductDto
     {

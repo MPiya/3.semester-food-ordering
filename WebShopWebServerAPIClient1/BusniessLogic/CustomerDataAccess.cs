@@ -163,7 +163,7 @@ namespace WebShop.BusniessLogic
         }
 
 
-        public int CreateOrder( Order aOrder)
+        public int CreateOrder(Order aOrder)
 
         {
             int insertedId = -1;

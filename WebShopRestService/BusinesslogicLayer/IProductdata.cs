@@ -1,6 +1,6 @@
 ﻿using WebShopModel.Model;
 
-namespace WebShopService.BusinesslogicLayer
+namespace RESTAPI.BusinesslogicLayer
 {
     public interface IProductdata
     {

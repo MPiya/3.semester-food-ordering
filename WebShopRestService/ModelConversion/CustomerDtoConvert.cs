@@ -1,7 +1,8 @@
-﻿using WebShopModel.Model;
-using WebShopService.Dtos;
+﻿using RestAPI.Dtos;
+using WebShopModel.Model;
 
-namespace WebShopService.ModelConversion
+
+namespace RestAPI.ModelConversion
 {
     public class CustomerDtoConvert
     {
