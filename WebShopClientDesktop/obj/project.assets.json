@@ -6312,24 +6312,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bon\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jeab\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopClientDesktop\\WebShopClientDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopClientDesktop\\WebShopClientDesktop.csproj",
       "projectName": "WebShopClientDesktop",
-      "projectPath": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopClientDesktop\\WebShopClientDesktop.csproj",
-      "packagesPath": "C:\\Users\\Bon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopClientDesktop\\obj\\",
+      "projectPath": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopClientDesktop\\WebShopClientDesktop.csproj",
+      "packagesPath": "C:\\Users\\jeab\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopClientDesktop\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Bon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\jeab\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6337,15 +6332,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopTest\\WebShopTest.csproj": {
-              "projectPath": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopTest\\WebShopTest.csproj"
+            "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopTest\\WebShopTest.csproj": {
+              "projectPath": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopTest\\WebShopTest.csproj"
             }
           }
         }
@@ -6384,7 +6378,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

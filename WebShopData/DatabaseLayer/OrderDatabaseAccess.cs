@@ -128,14 +128,50 @@ namespace WebShopData.DatabaseLayer
             return foundOrder;
         }
 
+        public List<Order> GetOrerIdCustomerNameDate()
+        {
+            List<Order> foundOrders;
+            Order readOrder;
+
+            //string query_GetOrderIdCustomerNameDate = "SELECT [Order].OrderId, Customer.firstName, Customer.lastName, [Order].orderDate\r\nFROM [Order]\r\nINNER JOIN Customer ON [Order].CustomerID=Customer.CustomerId;";
+            string query_GetOrderIdCustomerNameDate = "SELECT Order.OrderId, Customer.FirstName,Order.OrderDate FROM Order INNER JOIN Customer ON Order.CustomerId = Customer.CustomerId";
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlCommand readCommand = new SqlCommand(query_GetOrderIdCustomerNameDate, conn))
+            {
+                conn.Open();
+                SqlDataReader ordersReader = readCommand.ExecuteReader();
+                foundOrders = new List<Order>();
+                while (ordersReader.Read())
+                {
+                    readOrder = GetOrderIdCustomerNameDate(ordersReader);
+                    foundOrders.Add(readOrder);
+                }
+            }
+            return foundOrders;
+        }
+
+        public Order GetOrderIdCustomerNameDate(SqlDataReader orderReader)
+        {
+        
+            Order foundOrder;
+
+            int tempOrderId;
+            string tempCustomerName;
+            DateTime tempDate;
+
+            tempOrderId = orderReader.GetInt32(orderReader.GetOrdinal("orderId"));
+            tempCustomerName = orderReader.GetString(orderReader.GetOrdinal("firstName"));
+            tempDate = orderReader.GetDateTime(orderReader.GetOrdinal("orderDate"));
+
+            foundOrder = new Order(tempOrderId, tempCustomerName, tempDate);
+            return foundOrder ;
+
+        }
         public bool UpdateOrder(Order orderToUUpdate)
         {
             throw new NotImplementedException();
         }
 
-       
-
-
-       
+        
     }
 }

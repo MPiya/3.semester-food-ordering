@@ -25,12 +25,21 @@ namespace WebShopModel.Model
 
         }
 
-        public int ID { get; set; }
+        public Order(int tempOrderId, string tempCustomerName, DateTime tempDate)
+        {
+            TempOrderId = tempOrderId;
+            TempCustomerName = tempCustomerName;
+            TempDate = tempDate;
+        }
 
+        public int ID { get; set; }
         public int customerId { get; set; }
         public DateTime orderDate { get; set; }
 
 
+        public int TempOrderId { get; }
+        public string TempCustomerName { get; }
+        public DateTime TempDate { get; }
     }
 
 }
