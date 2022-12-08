@@ -22,3 +22,15 @@ C:\Users\jeab\DMA_2021\3.SemesterProject\Projekt_v3\3.semester-food-ordering\Web
 C:\Users\jeab\DMA_2021\3.SemesterProject\Projekt_v3\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\refint\DatabaseAccess.dll
 C:\Users\jeab\DMA_2021\3.SemesterProject\Projekt_v3\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.pdb
 C:\Users\jeab\DMA_2021\3.SemesterProject\Projekt_v3\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\ref\DatabaseAccess.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.csproj.AssemblyReference.cache
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.AssemblyInfoInputs.cache
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.AssemblyInfo.cs
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.csproj.CoreCompileInputs.cache
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\refint\DatabaseAccess.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\DatabaseAccess.pdb
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\bin\Debug\net6.0\DatabaseAccess.deps.json
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\bin\Debug\net6.0\DatabaseAccess.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\bin\Debug\net6.0\DatabaseAccess.pdb
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester Project\3.semester-food-ordering\WebShopData\obj\Debug\net6.0\ref\DatabaseAccess.dll

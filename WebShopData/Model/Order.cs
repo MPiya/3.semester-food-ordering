@@ -25,18 +25,14 @@ namespace WebShopModel.Model
 
         }
 
-<<<<<<< HEAD
         public Order(int tempOrderId, string tempCustomerName, DateTime tempDate)
         {
             TempOrderId = tempOrderId;
             TempCustomerName = tempCustomerName;
             TempDate = tempDate;
         }
-=======
 
 
-        public int ID { get; set; }
->>>>>>> parent of def5651 (Fix Name Space in RESTAPI project)
 
         public int ID { get; set; }
         public int customerId { get; set; }
@@ -44,11 +40,11 @@ namespace WebShopModel.Model
 
         public List<OrderLine> Lines { get; set; }
 
-<<<<<<< HEAD
+
         public int TempOrderId { get; }
         public string TempCustomerName { get; }
         public DateTime TempDate { get; }
-=======
+
         public virtual Customer Customer { get; set; } = null!;
 
         /*
@@ -82,7 +78,7 @@ namespace WebShopModel.Model
                     return false;
                 }
             }*/
->>>>>>> parent of def5651 (Fix Name Space in RESTAPI project)
+
     }
 
 }
