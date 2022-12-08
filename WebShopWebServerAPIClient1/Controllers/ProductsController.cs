@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using WebShop.ServiceLayer;
 using WebShopModel.Model;
-using WebShopWebServerAPIClient.ServiceLayer;
+
 
 namespace WebShop.Controllers
 {

@@ -1,9 +1,10 @@
-﻿using WebShopModel.Model;
-using WebShopService.Dtos;
+﻿using RestAPI.Dtos;
+using WebShopModel.Model;
 
 
 
-namespace WebShopService.ModelConversion
+
+namespace RestAPI.ModelConversion
 
 {
     public class OrderDtoConvert
@@ -41,9 +42,9 @@ namespace WebShopService.ModelConversion
         public static Order? ToOrder(OrderDto inDto)
         {
             Order? aOrder = null;
-            if(inDto != null)
+            if (inDto != null)
             {
-                aOrder = new Order(inDto.customerId, inDto.customerId, inDto.orderDate);
+                aOrder = new Order(inDto.customerID, inDto.orderDate);
             }
             return aOrder;
         }

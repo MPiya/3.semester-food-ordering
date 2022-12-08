@@ -1,4 +1,4 @@
-﻿namespace WebShopWebServerAPIClient.ServiceLayer
+﻿namespace WebShop.ServiceLayer
 {
     public interface IServiceConnection
     {

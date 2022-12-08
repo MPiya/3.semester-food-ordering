@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using WebShopModel.Model;
 
 namespace WebShop.BusniessLogic
@@ -29,7 +30,7 @@ namespace WebShop.BusniessLogic
         // _connectionString = inConnectionString;
         // }
 
-        public int CreateCustomera(Customer aCustomer)
+        public int CreateCustomer(Customer aCustomer)
         {
             int insertedId = -1;
             string insertString = "insert into [Customer](firstName, lastName, phoneNumber, Email) OUTPUT" +
@@ -60,37 +61,7 @@ namespace WebShop.BusniessLogic
         {
             throw new NotImplementedException();
         }
-        public int CreateCustomer(Customer aCustomer)
-        {
-            int insertedId = -1;
-            string insertString = "insert into [Customer](firstName, lastName, phoneNumber, Email) OUTPUT" +
-                " INSERTED.ID values(@FirstNam, @LastNam, @Phonenu,@Email)";
-            using (SqlConnection con = new SqlConnection(_connectionString))
-            using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
-            {
-                // Prepace SQL
-                SqlParameter fNameParam = new("@FirstNam", aCustomer.FirstName);
-                CreateCommand.Parameters.Add(fNameParam);
-                SqlParameter lNameParam = new("@LastNam", aCustomer.LastName);
-                CreateCommand.Parameters.Add(lNameParam);
-                SqlParameter phoneNuParam = new("@Phonenu", aCustomer.PhoneNu);
-                CreateCommand.Parameters.Add(phoneNuParam);
-          
-                SqlParameter emailParam = new("@Email", aCustomer.Email);
-                CreateCommand.Parameters.Add(emailParam);
 
-                //
-                con.Open();
-                // Execute save and read generated key (ID)
-                insertedId = (int)CreateCommand.ExecuteScalar();
-                Console.WriteLine(insertedId.ToString());
-            }
-            return insertedId;
-
-        }
-
-
-      
 
         public List<Customer> GetCustomerAll()
         {
@@ -123,8 +94,8 @@ namespace WebShop.BusniessLogic
             tempLastName = customerReader.GetString(customerReader.GetOrdinal("lastName"));
             temPhoneNu = customerReader.GetString(customerReader.GetOrdinal("phoneNumber"));
             tempEmail = customerReader.GetString(customerReader.GetOrdinal("email"));
-          
-            foundCustomer = new Customer (tempId, tempFirstName, tempLastName,
+
+            foundCustomer = new Customer(tempId, tempFirstName, tempLastName,
                 temPhoneNu, tempEmail);
 
             return foundCustomer;
@@ -163,7 +134,7 @@ namespace WebShop.BusniessLogic
         }
 
 
-        public int CreateOrder( Order aOrder)
+        public int CreateOrder(Order aOrder)
 
         {
             int insertedId = -1;
@@ -187,9 +158,36 @@ namespace WebShop.BusniessLogic
                 con.Open();
                 //
                 // Execute save and read generated key (ID)
-               CreateCommand.ExecuteScalar();
-               
+               insertedId = (int)CreateCommand.ExecuteScalar();
 
+
+            }
+            return insertedId;
+        }
+
+
+        public int CreateOrderLine(OrderLine oOrderLine)
+        {
+
+            int insertedId = -1;
+            string insertString = "INSERT INTO OrderLine (productID,orderID,quantity,totalPrice) VALUES" +
+                   "(@a,@b,@c,@d)";
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
+            {
+                // Prepace SQL
+                SqlParameter productIDParam = new("@a", oOrderLine.ProductID);
+                CreateCommand.Parameters.Add(productIDParam);
+                SqlParameter orderIDParam = new("@b", oOrderLine.OrderID);
+                CreateCommand.Parameters.Add(orderIDParam);
+                SqlParameter saleQuantityParam = new("@c", oOrderLine.Quantity);
+                CreateCommand.Parameters.Add(saleQuantityParam);
+                SqlParameter totalPriceParam = new("@d", oOrderLine.TotalPrice);
+                CreateCommand.Parameters.Add(totalPriceParam);
+                //
+                con.Open();
+                // Execute save and read generated key (ID)
+                CreateCommand.ExecuteScalar();
             }
             return insertedId;
         }

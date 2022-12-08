@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using WebShopModel.Model;
-using WebShopWebServerAPIClient.ServiceLayer;
 
 namespace WebShop.ServiceLayer
 {

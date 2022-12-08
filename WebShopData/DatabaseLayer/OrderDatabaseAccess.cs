@@ -27,36 +27,35 @@ namespace WebShopData.DatabaseLayer
         {
             _connectionString = inConnectionString;
         }
-
         public int CreateOrder(Order aOrder)
 
-        {   
+        {
             int insertedId = -1;
-            DateTime insertedDateTime = DateTime.Now;
+
             //
-            string insertString = "insert into [order](customerID) OUTPUT INSERTED.ID  values" +
-                "(@customerID)";
+            string insertString = "insert into [order] (customerID,orderDate)  OUTPUT " +
+                " INSERTED.ID values  (@wdwd,@OrderDate)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
                 // Prepace SQL
-           
-                SqlParameter customerIdParam = new("@cusotmerID", aOrder.customerId);
+                SqlParameter customerIdParam = new("@wdwd", aOrder.customerId);
                 CreateCommand.Parameters.Add(customerIdParam);
-              //  SqlParameter paymentTypeParam = new("@paymentType", aOrder.paymentType);
-             //   CreateCommand.Parameters.Add(paymentTypeParam);
-              
-     
-                //
+                SqlParameter orderDateParam = new("@OrderDate", aOrder.orderDate);
+                CreateCommand.Parameters.Add(orderDateParam);
+        
                 con.Open();
                 //
                 // Execute save and read generated key (ID)
                 insertedId = (int)CreateCommand.ExecuteScalar();
-                insertedDateTime = (DateTime)CreateCommand.ExecuteScalar();
+
 
             }
             return insertedId;
         }
+
+
+
         public bool DeleteOrder(int id)
         {
             throw new NotImplementedException();

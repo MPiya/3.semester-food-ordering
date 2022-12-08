@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WebShop.Controllers;
+using WebShop.ServiceLayer;
 using WebShop.Session;
 using WebShopModel.Model;
-using WebShopWebServerAPIClient.ServiceLayer;
+
 using WebShopWebServerAPIClient1.Data;
 using WebShopWebServerAPIClient1.Models.ViewModels;
 
