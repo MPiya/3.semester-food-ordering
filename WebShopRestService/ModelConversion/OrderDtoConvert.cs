@@ -1,10 +1,9 @@
-﻿
-using RestAPI.Dtos;
-using WebShopModel.Model;
+﻿using WebShopModel.Model;
+using WebShopService.Dtos;
 
 
 
-namespace RestAPI.ModelConversion
+namespace WebShopService.ModelConversion
 
 {
     public class OrderDtoConvert
@@ -34,7 +33,7 @@ namespace RestAPI.ModelConversion
             OrderDto? aOrderReadDto = null;
             if (inOrder != null)
             {
-                aOrderReadDto = new OrderDto(inOrder.ID,inOrder.customerId, inOrder.orderDate);
+                aOrderReadDto = new OrderDto(inOrder.ID, inOrder.customerId, inOrder.orderDate);
                 //aOrderReadDto.FullOrder = $"{inOrder.customerId} {inOrder.paymentType} {inOrder.notes} {inOrder.orderDate} {inOrder.id}";
             }
             return aOrderReadDto;
@@ -44,7 +43,7 @@ namespace RestAPI.ModelConversion
             Order? aOrder = null;
             if(inDto != null)
             {
-                aOrder = new Order(inDto.customerId, inDto.orderDate);
+                aOrder = new Order(inDto.customerId, inDto.customerId, inDto.orderDate);
             }
             return aOrder;
         }

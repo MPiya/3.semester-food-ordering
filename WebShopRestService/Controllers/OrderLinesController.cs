@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace RESTAPI.Controllers
+namespace RestAPi.Controllers
 {
     public class OrderLinesController : Controller
     {

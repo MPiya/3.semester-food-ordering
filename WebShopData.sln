@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopClientDesktop", "Web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryDBAccess", "Access\TryDBAccess.csproj", "{32D54195-C3CF-47D7-96A8-A4341FE64936}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestAPI", "WebShopRestService\RestAPI.csproj", "{BB623041-31A3-4D6B-90C7-42FD3EB03620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestAPi", "WebShopRestService\RestAPi.csproj", "{BB623041-31A3-4D6B-90C7-42FD3EB03620}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop", "WebShopWebServerAPIClient1\WebShop.csproj", "{A4CDBC68-0228-443C-B012-36AB137FBE8F}"
 EndProject

@@ -27,6 +27,14 @@ namespace WebShopModel.Model
 
         }
 
+        public Order(Customer customer, DateTime date)
+        {
+
+            this.customerId = customer.Id;
+            this.orderDate = date;
+
+        }
+
 
         public int ID { get; set; }
 

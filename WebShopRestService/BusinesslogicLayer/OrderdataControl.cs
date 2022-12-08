@@ -2,7 +2,8 @@
 using WebShopData.DatabaseLayer;
 using WebShopModel.Model;
 
-namespace RESTAPI.BusinesslogicLayer { 
+namespace WebShopService.BusinesslogicLayer
+{
     public class OrderdataControl : IOrderdata
     {
         IOrderAccess _orderAccess;
@@ -16,18 +17,18 @@ namespace RESTAPI.BusinesslogicLayer {
         public int Add(Order newOrder)
         {
             int insertId;
-            
+            DateTime insertedDateTime = DateTime.Now;
             try
             {
                 insertId = _orderAccess.CreateOrder(newOrder);
-                
+                insertedDateTime = insertedDateTime.AddYears(1).AddMonths(1).AddDays(1).AddHours(1).AddMinutes(1);
 
             }
             catch
             {
 
                 insertId = -1;
-               
+                insertedDateTime = DateTime.Now;
             }
             return insertId;
         }

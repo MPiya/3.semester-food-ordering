@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "TMlOFAtRfqbkKnVT7/OrlcJz8WDnSMNV9tV2mWlihhpAfGDlo7rYquCfFbDzX6UwsP9n3Sf9e+42oihKpqMiJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopRestService\\RestAPI.csproj",
+=======
+  "dgSpecHash": "7wSxN644wwXe8aSh37DAig6VACliZSB9zvCcl1NdVdTAj3qL+dI/HmYyitwAGdva+0nbO+8ZAkAthKeqHgyraw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopRestService\\RestAPi.csproj",
+>>>>>>> parent of def5651 (Fix Name Space in RESTAPI project)
   "expectedPackageFiles": [
     "C:\\Users\\jeab\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\jeab\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",

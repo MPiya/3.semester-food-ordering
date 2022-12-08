@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestAPI.Dtos;
-using RESTAPI.BusinesslogicLayer;
 using WebShopModel.Model;
+using WebShopService.BusinesslogicLayer;
+using WebShopService.Dtos;
 
-namespace RESTAPI.Controllers
+namespace WebShopService.Controllers
 {
 
     [Route("api/[controller]")]
@@ -29,7 +29,7 @@ namespace RESTAPI.Controllers
             List<CustomerDto>? foundDts = null;
             if (foundCustomers != null)
             {
-                foundDts = RestAPI.ModelConversion.CustomerDtoConvert.FromCustomerCollection(foundCustomers);
+                foundDts = ModelConversion.CustomerDtoConvert.FromCustomerCollection(foundCustomers);
             }
             // evaluate 
             if (foundDts != null)
@@ -69,7 +69,7 @@ namespace RESTAPI.Controllers
             int insertedId = -1;
             if (inCustomer != null)
             {
-                Customer? dbCustomer = RestAPI.ModelConversion.CustomerDtoConvert.ToCustomer(inCustomer);
+                Customer? dbCustomer = ModelConversion.CustomerDtoConvert.ToCustomer(inCustomer);
                 insertedId = _cControl.Add(dbCustomer);
             }
             if (insertedId > 0)

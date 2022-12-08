@@ -30,23 +30,29 @@ namespace WebShopData.DatabaseLayer
 
         public int CreateOrder(Order aOrder)
 
-        {
+        {   
             int insertedId = -1;
-            string insertString = "insert into [order] (customerID,orderDate)  values" +
-                "(@wdwd,@OrderDate)";
+            DateTime insertedDateTime = DateTime.Now;
+            //
+            string insertString = "insert into [order](customerID) OUTPUT INSERTED.ID  values" +
+                "(@customerID)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
-                // Prepare SQL
-                SqlParameter customerIdParam = new("@wdwd", aOrder.customerId);
+                // Prepace SQL
+           
+                SqlParameter customerIdParam = new("@cusotmerID", aOrder.customerId);
                 CreateCommand.Parameters.Add(customerIdParam);
-                SqlParameter orderDateParam = new("@OrderDate", aOrder.orderDate);
-                CreateCommand.Parameters.Add(orderDateParam);
-          
+              //  SqlParameter paymentTypeParam = new("@paymentType", aOrder.paymentType);
+             //   CreateCommand.Parameters.Add(paymentTypeParam);
+              
+     
+                //
                 con.Open();
                 //
                 // Execute save and read generated key (ID)
                 insertedId = (int)CreateCommand.ExecuteScalar();
+                insertedDateTime = (DateTime)CreateCommand.ExecuteScalar();
 
             }
             return insertedId;

@@ -1,7 +1,11 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopRestService\\RestAPI.csproj": {}
+=======
+    "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopRestService\\RestAPi.csproj": {}
+>>>>>>> parent of def5651 (Fix Name Space in RESTAPI project)
   },
   "projects": {
     "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj": {
@@ -69,6 +73,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopRestService\\RestAPI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -77,6 +82,16 @@
         "projectPath": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopRestService\\RestAPI.csproj",
         "packagesPath": "C:\\Users\\jeab\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jeab\\DMA_2021\\3.SemesterProject\\Projekt_v3\\3.semester-food-ordering\\WebShopRestService\\obj\\",
+=======
+    "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopRestService\\RestAPi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopRestService\\RestAPi.csproj",
+        "projectName": "RestAPi",
+        "projectPath": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopRestService\\RestAPi.csproj",
+        "packagesPath": "C:\\Users\\Bon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bon\\Desktop\\WebShopData\\WebShopRestService\\obj\\",
+>>>>>>> parent of def5651 (Fix Name Space in RESTAPI project)
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeab\\AppData\\Roaming\\NuGet\\NuGet.Config",

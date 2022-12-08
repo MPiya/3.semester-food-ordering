@@ -14,7 +14,7 @@ namespace WebShop.Controllers
     {
 
         CustomerServiceConnection cusService = new CustomerServiceConnection();
-        OrderServiceConnection orderService = new OrderServiceConnection();
+
 
         CustomerDatabaseAccessa _customerAccess;
 
@@ -43,15 +43,13 @@ namespace WebShop.Controllers
         {
             DateTime insertedDateTime = DateTime.Now;
                 int returnCustomerId = await cusService.SaveCustomer(customer);
-            Order order = new(returnCustomerId, insertedDateTime);
-            int returnOrderId = await orderService.SaveOrder(order);
-      //      Customer da = new("Adam", "Star", "4564566", "123@gmaill.com");
+         
+            Customer da = new("Adam", "Star", "4564566", "123@gmaill.com");
             
            
          //  int cusId = _customerAccess.CreateCustomera(da);
             Order ad = new(returnCustomerId, insertedDateTime);
-
-            //int orderId = _customerAccess.CreateOrder(ad);
+            int orderId = _customerAccess.CreateOrder(ad);
            // int OrderLine = _customerAccess.CreateOrderLine(orderId, cusId, etc);
             
 

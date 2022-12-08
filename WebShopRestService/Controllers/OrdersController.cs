@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using RestAPI.Dtos;
-using RESTAPI.BusinesslogicLayer;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using WebShopModel.Model;
+using WebShopService.BusinesslogicLayer;
+using WebShopService.Dtos;
 
-namespace RESTAPI.Controllers
+namespace WebShopService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,7 +27,7 @@ namespace RESTAPI.Controllers
             List<Order>? foundOrders = _oControl.Get();
             List<OrderDto>? foundDts = null;
             if (foundOrders != null) {
-                foundDts = RestAPI.ModelConversion.OrderDtoConvert.FromOrderCollection(foundOrders);
+                foundDts = ModelConversion.OrderDtoConvert.FromOrderCollection(foundOrders);
             }
             // evaluate
             if (foundDts != null)
@@ -64,7 +66,7 @@ namespace RESTAPI.Controllers
             DateTime dateTime= DateTime.Now;
             if(inOrder !=null)
             {
-                Order? dbOrder = RestAPI.ModelConversion.OrderDtoConvert.ToOrder(inOrder);
+                Order? dbOrder = ModelConversion.OrderDtoConvert.ToOrder(inOrder);
                 insertedId = _oControl.Add(dbOrder);
                 
             }
@@ -78,8 +80,6 @@ namespace RESTAPI.Controllers
             }
             return foundReturn;
         }
-
-
 
     }
 }

@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestAPI.Dtos;
-using RESTAPI.BusinesslogicLayer;
 using WebShopModel.Model;
+using WebShopService.BusinesslogicLayer;
+using WebShopService.Dtos;
+using WebShopService.ModelConversion;
 
-
-
-namespace RESTAPI.Controllers
+namespace WebShopService.Controllers
 {
 
     [Route("api/[controller]")]
@@ -29,7 +28,7 @@ namespace RESTAPI.Controllers
             List<ProductDto>? foundDts = null;
             if (foundProducts != null)
             {
-                foundDts = RestAPI.ModelConversion.ProductDtoConvert.FromProductCollection(foundProducts);
+                foundDts = ModelConversion.ProductDtoConvert.FromProductCollection(foundProducts);
             }
             // evaluate 
             if (foundDts != null)
@@ -61,7 +60,7 @@ namespace RESTAPI.Controllers
           ProductDto? foundDts = null;
             if (foundProducts != null)
             {
-                foundDts = RestAPI.ModelConversion.ProductDtoConvert.FromProduct(foundProducts);
+                foundDts = ModelConversion.ProductDtoConvert.FromProduct(foundProducts);
             }
             // evaluate 
             if (foundDts != null)
