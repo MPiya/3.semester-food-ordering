@@ -14,8 +14,6 @@ namespace WebShop.BusniessLogic
     {
         readonly string _connectionString;
 
-
-
         public CustomerDatabaseAccessa(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
@@ -192,6 +190,91 @@ namespace WebShop.BusniessLogic
             return insertedId;
         }
 
+
+
+
+     
+        public List<Order> GetOrerIdCustomerNameDate()
+        {
+            List<Order> foundOrders;
+            Order readOrder;
+
+            //string query_GetOrderIdCustomerNameDate = "SELECT [Order].OrderId, Customer.firstName, Customer.lastName, [Order].orderDate\r\nFROM [Order]\r\nINNER JOIN Customer ON [Order].CustomerID=Customer.CustomerId;";
+            string query_GetOrderIdCustomerNameDate = "SELECT [Order].ID, Customer.firstName, [Order].orderDate FROM [Order] INNER JOIN Customer ON [Order].CustomerID=Customer.ID";
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlCommand readCommand = new SqlCommand(query_GetOrderIdCustomerNameDate, conn))
+            {
+                conn.Open();
+                SqlDataReader ordersReader = readCommand.ExecuteReader();
+                foundOrders = new List<Order>();
+                while (ordersReader.Read())
+                {
+                    readOrder = GetOrderIdCustomerNameDate(ordersReader);
+                    foundOrders.Add(readOrder);
+                }
+            }
+            return foundOrders;
+        }
+
+        public Order GetOrderIdCustomerNameDate(SqlDataReader orderReader)
+        {
+
+            Order foundOrder;
+
+            int tempOrderId;
+            string tempCustomerName;
+            DateTime tempDate;
+
+            tempOrderId = orderReader.GetInt32(orderReader.GetOrdinal("ID"));
+            tempCustomerName = orderReader.GetString(orderReader.GetOrdinal("firstName"));
+            tempDate = orderReader.GetDateTime(orderReader.GetOrdinal("orderDate"));
+
+            foundOrder = new Order(tempOrderId, tempCustomerName, tempDate);
+            return foundOrder;
+
+        }
+
+        public List<Order> GetOrderAll()
+        {
+            List<Order> foundOrders;
+            Order readOrder;
+            //
+            string queryString = "select ID, customerID, orderDate from [Order]";
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            using (SqlCommand readCommand = new SqlCommand(queryString, con))
+            {
+                con.Open();
+                // Execute read
+                SqlDataReader orderReader = readCommand.ExecuteReader();
+                // Collect data
+                foundOrders = new List<Order>();
+                while (orderReader.Read())
+                {
+                    readOrder = GetOrderFromReader(orderReader);
+                    foundOrders.Add(readOrder);
+                }
+            }
+            return foundOrders;
+
+
+        }
+
+        private Order GetOrderFromReader(SqlDataReader orderReader)
+        {
+            Order foundOrder;
+            int tempId, tempCustomerId;
+            DateTime tempOrderDate;
+
+            tempId = orderReader.GetInt32(orderReader.GetOrdinal("ID"));
+            tempOrderDate = orderReader.GetDateTime(orderReader.GetOrdinal("orderDate"));
+
+            tempCustomerId = orderReader.GetInt32(orderReader.GetOrdinal("customerId"));
+
+            foundOrder = new Order(tempId, tempCustomerId, tempOrderDate);
+
+
+            return foundOrder;
+        }
 
     }
 }

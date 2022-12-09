@@ -45,13 +45,13 @@ namespace WebShop.Controllers
                 int customerId = await cusService.SaveCustomer(customer);
                      order = new(customerId, insertedDateTime);
                 int orderId = await orderService.SaveOrder(order);
-        
+            List<Order> fetchedOrders = _customerAccess.GetOrerIdCustomerNameDate();
             //HttpContext.Session.SetJson("Cart", cartItem);
             // CartItem item = HttpContext.Session.GetJson<CartItem>("Cart");
             // the value here are 0 im not sure why
-         //   OrderLine orderline = new OrderLine(4, orderId, 3, 30);
+            //   OrderLine orderline = new OrderLine(4, orderId, 3, 30);
             // OrderLine orderline = new OrderLine(item.ProductId, 90, item.Quantity, item.Total);
-           // _customerAccess.CreateOrderLine(orderline);
+            // _customerAccess.CreateOrderLine(orderline);
             return RedirectToAction(nameof(Index));
 
             //OrderLine orderline = new OrderLine(1, 66, 2, 10);

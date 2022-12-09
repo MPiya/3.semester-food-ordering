@@ -11,7 +11,7 @@ namespace WebShopData.DatabaseLayer
     {
         Order GetOrderById(int ID);
         List<Order> GetOrderAll();
-       // Order GetOrderIdCustomerNameDate();
+        List<Order> GetOrerIdCustomerNameDate();
         int CreateOrder(Order orderToAdd);
         bool UpdateOrder(Order orderToUUpdate);
         bool DeleteOrder(int ID);

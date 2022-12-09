@@ -42,6 +42,24 @@ namespace WebShopModel.Model
         public DateTime orderDate { get; set; }
 
 
+        public Order(int tempOrderId, string tempCustomerName, DateTime tempDate)
+        {
+            TempOrderId = tempOrderId;
+            TempCustomerName = tempCustomerName;
+            TempDate = tempDate;
+        }
+        public Order(int tempOrderId, int id, DateTime tempDate)
+        {
+            TempOrderId = tempOrderId;
+            customerId = id;
+            TempDate = tempDate;
+        }
+
+        public int TempOrderId { get; }
+        public string TempCustomerName { get; }
+        public DateTime TempDate { get; }
+
+
         /*
         public Order(DateTime orderDate, int customerId, string? paymentType, string? notes)
         {

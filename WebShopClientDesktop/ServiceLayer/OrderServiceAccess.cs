@@ -11,7 +11,7 @@ namespace WebShopClientDesktop.ServiceLayer
     public class OrderServiceAccess : IOrderAccess
     {
 		readonly IServiceConnection _orderService;
-		readonly String _serviceBaseUrl = "https://localhost:7177/api/orders/";
+		readonly String _serviceBaseUrl = "https://localhost:7177/api/orders/Detail";
 
 		public OrderServiceAccess()
 		{

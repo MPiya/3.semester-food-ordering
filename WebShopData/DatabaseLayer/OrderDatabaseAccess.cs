@@ -133,13 +133,14 @@ namespace WebShopData.DatabaseLayer
             return foundOrder;
         }
 
+
         public List<Order> GetOrerIdCustomerNameDate()
         {
             List<Order> foundOrders;
             Order readOrder;
 
             //string query_GetOrderIdCustomerNameDate = "SELECT [Order].OrderId, Customer.firstName, Customer.lastName, [Order].orderDate\r\nFROM [Order]\r\nINNER JOIN Customer ON [Order].CustomerID=Customer.CustomerId;";
-            string query_GetOrderIdCustomerNameDate = "SELECT Order.OrderId, Customer.FirstName,Order.OrderDate FROM Order INNER JOIN Customer ON Order.CustomerId = Customer.CustomerId";
+            string query_GetOrderIdCustomerNameDate = "SELECT [Order].ID, Customer.firstName, [Order].orderDate FROM [Order] INNER JOIN Customer ON [Order].CustomerID=Customer.ID";
             using (SqlConnection conn = new SqlConnection(_connectionString))
             using (SqlCommand readCommand = new SqlCommand(query_GetOrderIdCustomerNameDate, conn))
             {
@@ -157,19 +158,19 @@ namespace WebShopData.DatabaseLayer
 
         public Order GetOrderIdCustomerNameDate(SqlDataReader orderReader)
         {
-        
+
             Order foundOrder;
 
             int tempOrderId;
             string tempCustomerName;
             DateTime tempDate;
 
-            tempOrderId = orderReader.GetInt32(orderReader.GetOrdinal("orderId"));
+            tempOrderId = orderReader.GetInt32(orderReader.GetOrdinal("ID"));
             tempCustomerName = orderReader.GetString(orderReader.GetOrdinal("firstName"));
             tempDate = orderReader.GetDateTime(orderReader.GetOrdinal("orderDate"));
 
             foundOrder = new Order(tempOrderId, tempCustomerName, tempDate);
-            return foundOrder ;
+            return foundOrder;
 
         }
         public bool UpdateOrder(Order orderToUUpdate)

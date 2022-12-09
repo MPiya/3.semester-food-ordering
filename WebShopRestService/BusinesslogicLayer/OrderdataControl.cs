@@ -69,7 +69,27 @@ namespace WebShopService.BusinesslogicLayer
 
         }
 
-        
+        public List<Order>? GetOrderCustomer()
+        {
+            List<Order>? foundOrders;
+            try
+            {
+                foundOrders = _orderAccess.GetOrerIdCustomerNameDate();
+
+            }
+            catch
+            {
+                foundOrders = null;
+            }
+
+            return foundOrders;
+
+        }
+
+       
+
+
+
 
         public bool Put(Order orderToUpdate)
         {

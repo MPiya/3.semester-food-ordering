@@ -27,15 +27,6 @@ namespace WebShopClientDesktop.ControlLayer
 			return foundOrders;
 		}
 
-		public async Task<List<Order>?> GetAllOrderIdCustomerNameDate()
-		{
-			List<Order>? foundOrders = null;
-			if( _oAccess != null)
-			{
-				foundOrders = await _oAccess.GetOrders();
-			}
-			return foundOrders;
-		}
 		//public async Task<int> SavePerson(string pment, string note, string custId)
 		//{
 		//	Order newOrder = new (pment, note, custId);
