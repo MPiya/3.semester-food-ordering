@@ -6687,8 +6687,8 @@
     },
     "DatabaseAccess/1.0.0": {
       "type": "project",
-      "path": "../WebShopData/DatabaseAccess.csproj",
-      "msbuildProject": "../WebShopData/DatabaseAccess.csproj"
+      "path": "../../../Downloads/3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8/WebShopData/DatabaseAccess.csproj",
+      "msbuildProject": "../../../Downloads/3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8/WebShopData/DatabaseAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6707,11 +6707,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\WebShopTest\\WebShopTest.csproj",
+      "projectUniqueName": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopTest\\WebShopTest.csproj",
       "projectName": "WebShopTest",
-      "projectPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\WebShopTest\\WebShopTest.csproj",
+      "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopTest\\WebShopTest.csproj",
       "packagesPath": "C:\\Users\\Bon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\WebShopTest\\obj\\",
+      "outputPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6733,8 +6733,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj": {
-              "projectPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj"
+            "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\\WebShopData\\DatabaseAccess.csproj": {
+              "projectPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\\WebShopData\\DatabaseAccess.csproj"
             }
           }
         }

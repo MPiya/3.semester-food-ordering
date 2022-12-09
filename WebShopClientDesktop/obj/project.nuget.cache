@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b8zdIAgZ9FuZEPViYHJ6H5scR5AJZRmukcukD2AoVn4rZAJgzWbetpGz98ntZPHrHNV8MiyWqMtDeHkxlOfsmw==",
+  "dgSpecHash": "qaacJvatIhK1aR78N9LSEiJ2RxX/msVjleWpNrI07OUoEz39GqCHwgW50OjRgah4rTNyCoihKJH85D+ZjFuSxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\WebShopClientDesktop\\WebShopClientDesktop.csproj",
+  "projectFilePath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopClientDesktop\\WebShopClientDesktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bon\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
     "C:\\Users\\Bon\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

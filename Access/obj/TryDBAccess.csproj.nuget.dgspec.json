@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\Access\\TryDBAccess.csproj": {}
+    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\Access\\TryDBAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\Access\\TryDBAccess.csproj": {
+    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\Access\\TryDBAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\Access\\TryDBAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\Access\\TryDBAccess.csproj",
         "projectName": "TryDBAccess",
-        "projectPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\Access\\TryDBAccess.csproj",
+        "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\Access\\TryDBAccess.csproj",
         "packagesPath": "C:\\Users\\Bon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-main (3)\\3.semester Project\\3.semester-food-ordering\\Access\\obj\\",
+        "outputPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\Access\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
