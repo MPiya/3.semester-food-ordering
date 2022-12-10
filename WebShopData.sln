@@ -5,15 +5,15 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopTest", "WebShopTest\WebShopTest.csproj", "{DF1423C3-329A-4F94-B85E-1CEEF960B4D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryDBAccess", "Access\TryDBAccess.csproj", "{32D54195-C3CF-47D7-96A8-A4341FE64936}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseAccess", "..\..\Downloads\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\WebShopData\DatabaseAccess.csproj", "{ACB3745F-9DCF-4F6B-9806-289CBC85B9BB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestAPi", "..\..\Downloads\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\WebShopRestService\RestAPi.csproj", "{D0F1C95C-1C8B-4D99-8E48-C8A6E4701E19}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop", "..\..\Downloads\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\WebShopWebServerAPIClient1\WebShop.csproj", "{4E520439-9E88-49C2-8FFE-47A52E60B884}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopClientDesktop", "..\..\Downloads\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\WebShopClientDesktop\WebShopClientDesktop.csproj", "{C9E72B78-B7A4-4C1F-A8EE-B583C0CFD87C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryDBAccess", "TestConnection\TryDBAccess.csproj", "{C9FEC4B2-F6CB-43A7-8164-A8E80521B76A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopClientDesktop", "WebShopClientDesktop\WebShopClientDesktop.csproj", "{C71508C8-C5A0-4CB9-9389-01AC94D7A650}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{DF1423C3-329A-4F94-B85E-1CEEF960B4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1423C3-329A-4F94-B85E-1CEEF960B4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1423C3-329A-4F94-B85E-1CEEF960B4D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32D54195-C3CF-47D7-96A8-A4341FE64936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32D54195-C3CF-47D7-96A8-A4341FE64936}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32D54195-C3CF-47D7-96A8-A4341FE64936}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32D54195-C3CF-47D7-96A8-A4341FE64936}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACB3745F-9DCF-4F6B-9806-289CBC85B9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACB3745F-9DCF-4F6B-9806-289CBC85B9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACB3745F-9DCF-4F6B-9806-289CBC85B9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,10 +37,14 @@ Global
 		{4E520439-9E88-49C2-8FFE-47A52E60B884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E520439-9E88-49C2-8FFE-47A52E60B884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E520439-9E88-49C2-8FFE-47A52E60B884}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9E72B78-B7A4-4C1F-A8EE-B583C0CFD87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9E72B78-B7A4-4C1F-A8EE-B583C0CFD87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9E72B78-B7A4-4C1F-A8EE-B583C0CFD87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9E72B78-B7A4-4C1F-A8EE-B583C0CFD87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9FEC4B2-F6CB-43A7-8164-A8E80521B76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9FEC4B2-F6CB-43A7-8164-A8E80521B76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9FEC4B2-F6CB-43A7-8164-A8E80521B76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9FEC4B2-F6CB-43A7-8164-A8E80521B76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C71508C8-C5A0-4CB9-9389-01AC94D7A650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71508C8-C5A0-4CB9-9389-01AC94D7A650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71508C8-C5A0-4CB9-9389-01AC94D7A650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71508C8-C5A0-4CB9-9389-01AC94D7A650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

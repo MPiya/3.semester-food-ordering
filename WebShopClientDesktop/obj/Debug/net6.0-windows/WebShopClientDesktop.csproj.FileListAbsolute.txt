@@ -466,3 +466,6 @@ C:\Users\Bon\Desktop\3.semester-food-ordering\WebShopClientDesktop\obj\Debug\net
 C:\Users\Bon\Desktop\3.semester-food-ordering\WebShopClientDesktop\obj\Debug\net6.0-windows\WebShopClientDesktop.pdb
 C:\Users\Bon\Desktop\3.semester-food-ordering\WebShopClientDesktop\obj\Debug\net6.0-windows\WebShopClientDesktop.genruntimeconfig.cache
 C:\Users\Bon\Desktop\3.semester-food-ordering\WebShopClientDesktop\obj\Debug\net6.0-windows\ref\WebShopClientDesktop.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester-food-ordering-main\WebShopClientDesktop\obj\Debug\net6.0-windows\WebShopClientDesktop.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester-food-ordering-main\WebShopClientDesktop\obj\Debug\net6.0-windows\refint\WebShopClientDesktop.dll
+C:\Users\Bon\Downloads\3.semester-food-ordering-main (3)\3.semester-food-ordering-main\WebShopClientDesktop\obj\Debug\net6.0-windows\WebShopClientDesktop.pdb
