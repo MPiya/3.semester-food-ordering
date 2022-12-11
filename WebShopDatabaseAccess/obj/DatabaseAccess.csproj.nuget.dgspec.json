@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj": {}
+    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj": {
+    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj",
         "projectName": "DatabaseAccess",
-        "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj",
+        "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj",
         "packagesPath": "C:\\Users\\Bon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\obj\\",
+        "outputPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

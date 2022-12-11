@@ -6687,8 +6687,8 @@
     },
     "DatabaseAccess/1.0.0": {
       "type": "project",
-      "path": "../../../Downloads/3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8/WebShopData/DatabaseAccess.csproj",
-      "msbuildProject": "../../../Downloads/3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8/WebShopData/DatabaseAccess.csproj"
+      "path": "../WebShopDatabaseAccess/DatabaseAccess.csproj",
+      "msbuildProject": "../WebShopDatabaseAccess/DatabaseAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6733,6 +6733,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj": {
+              "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj"
+            },
             "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\\WebShopData\\DatabaseAccess.csproj": {
               "projectPath": "C:\\Users\\Bon\\Downloads\\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\\WebShopData\\DatabaseAccess.csproj"
             }

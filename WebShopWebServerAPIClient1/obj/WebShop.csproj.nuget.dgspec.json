@@ -4,6 +4,76 @@
     "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopWebServerAPIClient1\\WebShop.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj",
+        "projectName": "DatabaseAccess",
+        "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj",
+        "packagesPath": "C:\\Users\\Bon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopWebServerAPIClient1\\WebShop.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,7 +102,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj": {
+                "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -6296,8 +6296,8 @@
     },
     "DatabaseAccess/1.0.0": {
       "type": "project",
-      "path": "../../../Downloads/3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8/WebShopData/DatabaseAccess.csproj",
-      "msbuildProject": "../../../Downloads/3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8/WebShopData/DatabaseAccess.csproj"
+      "path": "../WebShopDatabaseAccess/DatabaseAccess.csproj",
+      "msbuildProject": "../WebShopDatabaseAccess/DatabaseAccess.csproj"
     },
     "WebShopTest/1.0.0": {
       "type": "project",

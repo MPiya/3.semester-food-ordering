@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IXgR1LccFXwAP8gkCEJEWgAevXV+gH8eIhdRA8reOjqupYWqKKKQSAYOqtxUzbZaJiJhmxze2g2BZs6jxN6WUQ==",
+  "dgSpecHash": "LeuvQAthOqlnixlZ+Ny7b3kC3J4tiz2I21P7vtJ+vPP4hTwE8gMz0e3R+aJ9U5/pgII8df4b6aSzP9vdLQYZiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj",
+  "projectFilePath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bon\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Bon\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",

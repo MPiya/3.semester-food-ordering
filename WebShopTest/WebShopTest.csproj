@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Downloads\3.semester-food-ordering-cc86ab4fa75693c6da1832cce42e86d73d43e9c8\WebShopData\DatabaseAccess.csproj" />
+    <ProjectReference Include="..\WebShopDatabaseAccess\DatabaseAccess.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>

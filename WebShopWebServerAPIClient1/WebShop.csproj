@@ -44,7 +44,7 @@
   </ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\WebShopData\DatabaseAccess.csproj" />
+	  <ProjectReference Include="..\WebShopDatabaseAccess\DatabaseAccess.csproj" />
 	</ItemGroup>
 
 </Project>
