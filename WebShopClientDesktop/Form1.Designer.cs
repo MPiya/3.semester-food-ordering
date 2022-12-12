@@ -37,7 +37,7 @@
             // 
             // buttonGetOrders
             // 
-            this.buttonGetOrders.Location = new System.Drawing.Point(175, 0);
+            this.buttonGetOrders.Location = new System.Drawing.Point(177, 41);
             this.buttonGetOrders.Name = "buttonGetOrders";
             this.buttonGetOrders.Size = new System.Drawing.Size(123, 43);
             this.buttonGetOrders.TabIndex = 0;
@@ -49,20 +49,20 @@
             // 
             this.listBoxOrders.FormattingEnabled = true;
             this.listBoxOrders.ItemHeight = 20;
-            this.listBoxOrders.Location = new System.Drawing.Point(6, 84);
+            this.listBoxOrders.Location = new System.Drawing.Point(26, 103);
             this.listBoxOrders.Name = "listBoxOrders";
-            this.listBoxOrders.Size = new System.Drawing.Size(428, 304);
+            this.listBoxOrders.Size = new System.Drawing.Size(272, 304);
             this.listBoxOrders.TabIndex = 1;
             this.listBoxOrders.SelectedIndexChanged += new System.EventHandler(this.listBoxOrders_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.buttonGetOrders);
             this.groupBox1.Controls.Add(this.listBoxOrders);
-            this.groupBox1.Location = new System.Drawing.Point(67, 12);
+            this.groupBox1.Controls.Add(this.buttonGetOrders);
+            this.groupBox1.Location = new System.Drawing.Point(67, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(440, 458);
+            this.groupBox1.Size = new System.Drawing.Size(312, 441);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Get orders";

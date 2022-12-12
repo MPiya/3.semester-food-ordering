@@ -1,13 +1,13 @@
 ﻿
-using WebShopModel.Model;
+using WebShop.Models;
 
 public class CartItem
         {
-                public long ProductId { get; set; }
+                public int ProductId { get; set; }
                 public string ProductName { get; set; }
                 public int Quantity { get; set; }
-                public double Price { get; set; }
-                public double Total
+                public float Price { get; set; }
+                public float Total
                 {
                         get { return Quantity * Price; }
                 }

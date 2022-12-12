@@ -1,55 +1,55 @@
-﻿
-@model WebShopModel.Model.Customer
+﻿@model WebShop.Models.ViewModels.OrderViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-@* @model WebShopModel.Model.Order *@
 <h4>Order</h4>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Index">
+       
+        <form action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <label asp-for="@Model.customerVM.FirstName" class="control-label"></label>
+                <input asp-for="@Model.customerVM.FirstName" class="form-control" />
+                <span asp-validation-for="@Model.customerVM.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <label asp-for="@Model.customerVM.LastName" class="control-label"></label>
+                <input asp-for="@Model.customerVM.LastName" class="form-control" />
+                <span asp-validation-for="@Model.customerVM.LastName" class="text-danger"></span>
             </div>
-                <div class="form-group">
-                <label asp-for="PhoneNu" class="control-label"></label>
-                <input asp-for="PhoneNu" class="form-control" />
-                <span asp-validation-for="PhoneNu" class="text-danger"></span>
+            <div class="form-group">
+                <label asp-for="@Model.customerVM.PhoneNu" class="control-label"></label>
+                <input asp-for="@Model.customerVM.PhoneNu" class="form-control" />
+                <span asp-validation-for="@Model.customerVM.PhoneNu" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="@Model.customerVM.Email" class="control-label"></label>
+                <input asp-for="@Model.customerVM.Email" class="form-control" />
+                <span asp-validation-for="@Model.customerVM.Email" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+            <label asp-for="@Model.orderVM.orderDate" class="control-label"></label>
+                <input asp-for="@Model.orderVM.orderDate" class="form-control" />
+                <span asp-validation-for="@Model.orderVM.orderDate" class="text-danger"></span>
             </div>
 
-            @*
-              <div class="form-group">
-                <label asp-for="orderDate" class="control-label"></label>
-                <input asp-for="orderDate" class="form-control" />
-                <span asp-validation-for="orderDate" class="text-danger"></span>
-            </div>*@
-
             <div class="form-group">
-                <input type="submit" asp-controller="Orders" asp-action="Create" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Submit" class="btn btn-primary" />
             </div>
         </form>
+       
     </div>
+
 </div>
 
+}
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-

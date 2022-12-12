@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
-using WebShopWebServerAPIClient1.Data;
+using WebShop.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

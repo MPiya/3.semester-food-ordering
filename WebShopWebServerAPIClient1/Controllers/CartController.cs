@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WebShop.Controllers;
+using WebShop.Models;
 using WebShop.ServiceLayer;
 using WebShop.Session;
-using WebShopModel.Model;
 
-using WebShopWebServerAPIClient1.Data;
-using WebShopWebServerAPIClient1.Models.ViewModels;
+using WebShop.Models.ViewModels;
 
 public class CartController : Controller
 {
@@ -38,7 +37,7 @@ public class CartController : Controller
             //LINQ iterate and sum all the items in cart
             GrandTotal = cart.Sum(x => x.Quantity * x.Price)
         };
-
+        TempData.Put("cartVM", cartVM.CartItems);
         return View(cartVM);
     }
 

@@ -2,9 +2,11 @@
 using Newtonsoft.Json;
 using System.Text;
 using WebShop.BusniessLogic;
+using WebShop.Models;
+using WebShop.Models.ViewModels;
 using WebShop.ServiceLayer;
 using WebShop.Session;
-using WebShopModel.Model;
+
 
 
 namespace WebShop.Controllers
@@ -12,15 +14,13 @@ namespace WebShop.Controllers
 
     public class OrdersController : Controller
     {
-
         CustomerServiceConnection cusService = new CustomerServiceConnection();
         OrderServiceConnection orderService = new OrderServiceConnection();
-
-        CustomerDatabaseAccessa _customerAccess;
+        OrderCRUD orderAccess;
 
         public OrdersController(IConfiguration inConfiguration)
         {
-            _customerAccess = new CustomerDatabaseAccessa(inConfiguration);
+            orderAccess = new OrderCRUD(inConfiguration);
         }
         public IActionResult Index()
         {
@@ -39,33 +39,33 @@ namespace WebShop.Controllers
         // POST: Customers/Create
         [HttpPost]
 
-        public async Task<ActionResult> Create(Customer customer, Order order, CartItem cartItem )
+        public async Task<ActionResult> Create(OrderViewModel model )
         {
-                DateTime insertedDateTime = DateTime.Now;
-                int customerId = await cusService.SaveCustomer(customer);
-                     order = new(customerId, insertedDateTime);
+
+
+            
+            Customer cus = new(model.customerVM.FirstName, model.customerVM.LastName, model.customerVM.PhoneNu, model.customerVM.PhoneNu);
+            int customerId = await cusService.SaveCustomer(cus);
+            Order order = new(customerId, model.orderVM.orderDate);
                 int orderId = await orderService.SaveOrder(order);
-            List<Order> fetchedOrders = _customerAccess.GetOrerIdCustomerNameDate();
-            //HttpContext.Session.SetJson("Cart", cartItem);
-            // CartItem item = HttpContext.Session.GetJson<CartItem>("Cart");
-            // the value here are 0 im not sure why
-            //   OrderLine orderline = new OrderLine(4, orderId, 3, 30);
-            // OrderLine orderline = new OrderLine(item.ProductId, 90, item.Quantity, item.Total);
-            // _customerAccess.CreateOrderLine(orderline);
+
+            List<CartItem> cartItems = TempData.Get<List<CartItem>>("cartVM");
+            
+            foreach(var item in cartItems)
+            {
+                OrderLine oLine= new OrderLine();
+                oLine.OrderID = orderId;
+                oLine.ProductID = item.ProductId;
+                oLine.Quantity = item.Quantity;
+                oLine.TotalPrice = item.Price;
+
+                orderAccess.ReduceProductQuantity(oLine);
+                orderAccess.CreateOrderLine(oLine);
+
+            }
+            
             return RedirectToAction(nameof(Index));
 
-            //OrderLine orderline = new OrderLine(1, 66, 2, 10);
-     
-            //   Customer da = new("Adam", "Star", "4564566", "123@gmaill.com");
-            //  int cusId = _customerAccess.CreateCustomera(da);
-            //  Order ad = new(returnCustomerId, insertedDateTime);
-
-            //int orderId = _customerAccess.CreateOrder(ad);
-            // int OrderLine = _customerAccess.CreateOrderLine(orderId, cusId, etc);
-
-
-
-            //  Order orderOBJ = new(cus.Id, order.orderDate); */
 
 
         }

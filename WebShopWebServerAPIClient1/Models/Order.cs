@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebShopModel.Model
+namespace WebShop.Models
 {
 
     public class Order

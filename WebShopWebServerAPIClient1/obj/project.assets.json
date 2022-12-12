@@ -10732,8 +10732,8 @@
     },
     "DatabaseAccess/1.0.0": {
       "type": "project",
-      "path": "../WebShopDatabaseAccess/DatabaseAccess.csproj",
-      "msbuildProject": "../WebShopDatabaseAccess/DatabaseAccess.csproj"
+      "path": "../WebShopData/DatabaseAccess.csproj",
+      "msbuildProject": "../WebShopData/DatabaseAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10783,8 +10783,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj": {
-              "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopDatabaseAccess\\DatabaseAccess.csproj"
+            "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj": {
+              "projectPath": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopData\\DatabaseAccess.csproj"
             }
           }
         }

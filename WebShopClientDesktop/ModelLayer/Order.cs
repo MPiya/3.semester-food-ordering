@@ -36,6 +36,8 @@ namespace WebShopClientDesktop.ModelLayer
 		public DateTime orderDate { get; set; }
 		public string? fullOrder { get; set; }
 		public string name { get; set; }
+
+        public string nameaa { get; set; }
         /*
 		public override string ToString()
 		{

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 using WebShopModel.Model;
 
-namespace WebShopWebServerAPIClient1.Data
+namespace WebShop.Models
 {
 	public class AppDbContext : IdentityDbContext
 	{

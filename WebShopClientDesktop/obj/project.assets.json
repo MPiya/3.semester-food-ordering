@@ -6296,8 +6296,8 @@
     },
     "DatabaseAccess/1.0.0": {
       "type": "project",
-      "path": "../WebShopDatabaseAccess/DatabaseAccess.csproj",
-      "msbuildProject": "../WebShopDatabaseAccess/DatabaseAccess.csproj"
+      "path": "../WebShopData/DatabaseAccess.csproj",
+      "msbuildProject": "../WebShopData/DatabaseAccess.csproj"
     },
     "WebShopTest/1.0.0": {
       "type": "project",

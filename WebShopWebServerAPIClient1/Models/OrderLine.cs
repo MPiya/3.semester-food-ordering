@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebShopWebServerAPIClient1.Data;
 
-namespace WebShopModel.Model
+
+namespace WebShop.Models
 {
     [Keyless]
     public class OrderLine
@@ -30,6 +30,11 @@ namespace WebShopModel.Model
             this.OrderID = orderID;
             this.Quantity = saleQuantity;
             this.TotalPrice = totalPrice;
+
+        }
+
+        public OrderLine()
+        {
 
         }
 

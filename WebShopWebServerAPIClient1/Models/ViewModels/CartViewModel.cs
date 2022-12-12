@@ -1,4 +1,5 @@
-﻿namespace WebShopWebServerAPIClient1.Models.ViewModels {
+﻿namespace WebShop.Models.ViewModels
+{
 
         public class CartViewModel
         {

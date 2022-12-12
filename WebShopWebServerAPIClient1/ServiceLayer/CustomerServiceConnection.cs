@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using NuGet.Protocol.Plugins;
 using System.Text;
-using WebShopModel.Model;
+using WebShop.Models;
 
 
 namespace WebShop.ServiceLayer
