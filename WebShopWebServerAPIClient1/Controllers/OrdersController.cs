@@ -50,24 +50,42 @@ namespace WebShop.Controllers
                 int orderId = await orderService.SaveOrder(order);
 
             List<CartItem> cartItems = TempData.Get<List<CartItem>>("cartVM");
-            
-            foreach(var item in cartItems)
+            try
             {
-                OrderLine oLine= new OrderLine();
-                oLine.OrderID = orderId;
-                oLine.ProductID = item.ProductId;
-                oLine.Quantity = item.Quantity;
-                oLine.TotalPrice = item.Price;
+                foreach (var item in cartItems)
+                {
+                    OrderLine oLine = new OrderLine();
+                    oLine.OrderID = orderId;
+                    oLine.ProductID = item.ProductId;
+                    oLine.Quantity = item.Quantity;
+                    oLine.TotalPrice = item.Price;
 
-                orderAccess.ReduceProductQuantity(oLine);
-                orderAccess.CreateOrderLine(oLine);
+                    orderAccess.ReduceProductQuantity(oLine);
+                    orderAccess.CreateOrderLine(oLine);
+
+                }
 
             }
+            catch (Exception)
+            {
+
+
+
+                return RedirectToAction("Error", "Orders");
+            }
+           
             
             return RedirectToAction(nameof(Index));
 
 
 
         }
+
+        public ActionResult Error()
+        {
+            return View();
+        }
+
+
     }
 }

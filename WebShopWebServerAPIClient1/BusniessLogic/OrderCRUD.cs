@@ -194,7 +194,7 @@ namespace WebShop.BusniessLogic
         public void ReduceProductQuantity(OrderLine oOrderLine)
         {
 
-            string query = "UPDATE PRODUCT SET stockQuantity =stockQuantity - @value Where ID =@id";
+            string query = "UPDATE PRODUCT SET stockQuantity =stockQuantity - @value Where ID =@id  AND RowVersion = RowVersion";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(query, con))
             {

@@ -9,14 +9,14 @@ using WebShop.Models.ViewModels;
 
 public class CartController : Controller
 {
-    private readonly AppDbContext _context;
+
 
     string baseURL = "https://localhost:7177/";
 
     private ServiceConnection connectToAPI;
-    public CartController(AppDbContext context)
+    public CartController()
     {
-        _context = context;
+       
         connectToAPI = new ServiceConnection();
         
     }

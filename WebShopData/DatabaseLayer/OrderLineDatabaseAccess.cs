@@ -53,7 +53,7 @@ namespace WebShopData.DatabaseLayer
         {
             List<OrderLine> foundOrderLines;
             OrderLine readOrderLine;
-            string queryString = "select productID, orderID, saleQuantity , totalPrice from OrderLine";
+            string queryString = "select productID, orderID,quantity,totalPrice from OrderLine";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand readCommand = new SqlCommand(queryString, con))
             {
@@ -77,7 +77,7 @@ namespace WebShopData.DatabaseLayer
             double tempTotalPrice;
             tempProductID = orderLineReader.GetInt32(orderLineReader.GetOrdinal("productID"));
             tempOrderID = orderLineReader.GetInt32(orderLineReader.GetOrdinal("orderID"));
-            tempSaleQuantity = orderLineReader.GetInt32(orderLineReader.GetOrdinal("saleQuantity"));
+            tempSaleQuantity = orderLineReader.GetInt32(orderLineReader.GetOrdinal("quantity"));
             tempTotalPrice = orderLineReader.GetDouble(orderLineReader.GetOrdinal("totalPrice"));
 
             foundOrderLine = new OrderLine(tempProductID, tempOrderID, tempSaleQuantity, tempTotalPrice);
@@ -91,31 +91,34 @@ namespace WebShopData.DatabaseLayer
             throw new NotImplementedException();
         }
 
+
+
         public int CreateOrderLine(OrderLine oOrderLine)
         {
 
             int insertedId = -1;
-            string insertString = "insert into OrderLine ( productID, orderID, saleQuantity, totalPrice) OUTPUT" +
-                " INSERTED.ID values(@Product, @OrderID, @SaleQuantity,@TotalPrice";
+            string insertString = "INSERT INTO OrderLine (productID,orderID,quantity,totalPrice) VALUES" +
+                   "(@a,@b,@c,@d)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
                 // Prepace SQL
-                SqlParameter productIDParam = new("@ProductID", oOrderLine.ProductID);
+                SqlParameter productIDParam = new("@a", oOrderLine.ProductID);
                 CreateCommand.Parameters.Add(productIDParam);
-                SqlParameter orderIDParam = new("@OrderID", oOrderLine.OrderID);
+                SqlParameter orderIDParam = new("@b", oOrderLine.OrderID);
                 CreateCommand.Parameters.Add(orderIDParam);
-                SqlParameter saleQuantityParam = new("@SaleQuantity", oOrderLine.Quantity);
+                SqlParameter saleQuantityParam = new("@c", oOrderLine.Quantity);
                 CreateCommand.Parameters.Add(saleQuantityParam);
-                SqlParameter totalPriceParam = new("@ProductID", oOrderLine.TotalPrice);
+                SqlParameter totalPriceParam = new("@d", oOrderLine.TotalPrice);
                 CreateCommand.Parameters.Add(totalPriceParam);
                 //
                 con.Open();
                 // Execute save and read generated key (ID)
-                insertedId = (int)CreateCommand.ExecuteScalar();
+                insertedId = (int)CreateCommand.ExecuteNonQuery();
             }
             return insertedId;
         }
+
     }
 }
 

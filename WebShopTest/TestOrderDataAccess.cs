@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using WebShopData.DatabaseLayer;
 using WebShopModel.Model;
 using Xunit;
@@ -40,6 +41,26 @@ namespace WebShopTest
             //Assert
             Assert.True(ordersWereRead);
         }
+
+        [Fact]
+        // orderId return true if it returns >0 because there is executeScalar in the method CreateOrder
+        public void TestCreateOrder()
+        {
+            //Arrange
+           //335 is customerID in DB 
+            DateTime currentDateTime = DateTime.Now;
+            Order order = new(335, currentDateTime);
+
+            //Act
+            int orderID = _orderAccess.CreateOrder(order);
+            bool checkId= (orderID > 0);
+        
+
+            //Assert
+            Assert.True(checkId);
+        }
+
+       
         
 
     }

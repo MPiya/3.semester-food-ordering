@@ -10,7 +10,7 @@ namespace WebShop.Models
     {
 
         public Product() { }
-        public Product(int id, string? name,  float price, string? image, int stockQuantity, bool isStock)
+        public Product(int id, string? name,  float price, string? image, int stockQuantity, bool isStock,byte[] RowVersion)
         {
             this.ID = id;
             this.Name = name;
@@ -18,6 +18,7 @@ namespace WebShop.Models
             this.Image = image;
             this.StockQuantity = stockQuantity;
             this.IsStock = isStock;
+            this.RowVersion = RowVersion;
 
 
         }
@@ -32,7 +33,7 @@ namespace WebShop.Models
         public int StockQuantity { get; set; }
 
         public bool IsStock { get; set; }
-       
+        public byte[] RowVersion { get; set; }
 
 
         public bool IsProductEmpty
