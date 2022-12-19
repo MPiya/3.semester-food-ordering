@@ -34,12 +34,12 @@ namespace WebShopData.DatabaseLayer
 
             //
             string insertString = "insert into [order] (customerID,orderDate)  OUTPUT " +
-                " INSERTED.ID values  (@wdwd,@OrderDate)";
+                " INSERTED.ID values  (@Id,@OrderDate)";
             using (SqlConnection con = new SqlConnection(_connectionString))
             using (SqlCommand CreateCommand = new SqlCommand(insertString, con))
             {
                 // Prepace SQL
-                SqlParameter customerIdParam = new("@wdwd", aOrder.customerId);
+                SqlParameter customerIdParam = new("@Id", aOrder.customerId);
                 CreateCommand.Parameters.Add(customerIdParam);
                 SqlParameter orderDateParam = new("@OrderDate", aOrder.orderDate);
                 CreateCommand.Parameters.Add(orderDateParam);

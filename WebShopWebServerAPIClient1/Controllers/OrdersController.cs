@@ -38,13 +38,15 @@ namespace WebShop.Controllers
 
         // POST: Customers/Create
         [HttpPost]
-
         public async Task<ActionResult> Create(OrderViewModel model )
         {
-
-
-            
-            Customer cus = new(model.customerVM.FirstName, model.customerVM.LastName, model.customerVM.PhoneNu, model.customerVM.PhoneNu);
+            Customer cus = new Customer
+            {
+                FirstName = model.customerVM.FirstName,
+                LastName = model.customerVM.LastName,
+                PhoneNu = model.customerVM.PhoneNu,
+                Email = model.customerVM.Email
+            };
             int customerId = await cusService.SaveCustomer(cus);
             Order order = new(customerId, model.orderVM.orderDate);
                 int orderId = await orderService.SaveOrder(order);
@@ -68,8 +70,6 @@ namespace WebShop.Controllers
             }
             catch (Exception)
             {
-
-
 
                 return RedirectToAction("Error", "Orders");
             }

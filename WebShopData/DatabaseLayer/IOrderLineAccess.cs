@@ -13,8 +13,11 @@ namespace WebShopData.DatabaseLayer
         OrderLine GetOrderLineByProductID(int productID);
         List<OrderLine> GetOrderLineAll();
 
-        bool UpdateOrderLine(OrderLine OrderLineToUpdate);
-        
+        void ReduceProductQuantity(OrderLine oOrderLine);
+
+
+
+
 
     }
 }

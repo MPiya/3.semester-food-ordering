@@ -15,18 +15,24 @@ namespace WebShopData.DatabaseLayer
     {
         readonly string _connectionString;
         private int tempSaleQuantity;
-
+        IOrderLineAccess _orderAccess;
         public OrderLineDatabaseAccess(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("CompanyConnection");
+           _orderAccess = new OrderLineDatabaseAccess(configuration);
         }
         public OrderLineDatabaseAccess(string inconnectionString)
         {
             _connectionString = inconnectionString;
         }
 
-
         
+
+       
+
+
+
+
         public OrderLine GetOrderLineByProductID(int findProductID)
         {
             OrderLine foundOrderLine;
@@ -86,12 +92,6 @@ namespace WebShopData.DatabaseLayer
         }
 
 
-        public bool UpdateOrderLine(OrderLine OrderLineToUpdate)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
         public int CreateOrderLine(OrderLine oOrderLine)
         {
@@ -114,11 +114,34 @@ namespace WebShopData.DatabaseLayer
                 //
                 con.Open();
                 // Execute save and read generated key (ID)
+
+                _orderAccess.ReduceProductQuantity(oOrderLine);
                 insertedId = (int)CreateCommand.ExecuteNonQuery();
             }
             return insertedId;
         }
 
+
+        public void ReduceProductQuantity(OrderLine oOrderLine)
+        {
+
+            string query = "UPDATE PRODUCT SET stockQuantity =stockQuantity - @value Where ID =@id  AND RowVersion = RowVersion";
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            using (SqlCommand CreateCommand = new SqlCommand(query, con))
+            {
+                // Prepace SQL
+                SqlParameter value = new("@value", oOrderLine.Quantity);
+                CreateCommand.Parameters.Add(value);
+
+                SqlParameter saleQuantityParam = new("@id", oOrderLine.ProductID);
+                CreateCommand.Parameters.Add(saleQuantityParam);
+
+                con.Open();
+                // Execute save and read generated key (ID)
+                CreateCommand.ExecuteNonQuery();
+            }
+
+        }
     }
 }
 
