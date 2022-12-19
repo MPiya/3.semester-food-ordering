@@ -1,0 +1,1 @@
+1. To use the project, use the provided SQLSCRIPT and change server name in appsetting.Json in WebShop 
