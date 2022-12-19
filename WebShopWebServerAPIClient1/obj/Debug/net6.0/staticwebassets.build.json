@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jye3iORspQILkCndPyeAqabrgpDh96yX/R0jjzr8KKQ=",
+  "Hash": "mvX0bCw12hyawkDFjgv/I4ma0AghBdEn/3oQ40uRjsQ=",
   "Source": "WebShop",
   "BasePath": "_content/WebShop",
   "Mode": "Default",
@@ -2089,6 +2089,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopWebServerAPIClient1\\wwwroot\\Pic\\23.JPG",
+      "SourceId": "WebShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopWebServerAPIClient1\\wwwroot\\",
+      "BasePath": "_content/WebShop",
+      "RelativePath": "Pic/23.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pic\\23.JPG"
     },
     {
       "Identity": "C:\\Users\\Bon\\Desktop\\3.semester-food-ordering\\WebShopWebServerAPIClient1\\wwwroot\\Pic\\4.JPG",
